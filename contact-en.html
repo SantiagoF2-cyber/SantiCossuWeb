@@ -1,0 +1,105 @@
+<!-- 
+Copyright © 2025 Santiago Cossu (SantiagoF2-cyber)
+This work is licensed under CC BY-NC-ND 4.0.
+Do not copy, modify or use without permission.
+Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio web de Santiago Cossu: diseño y desarrollo de sitios web modernos y responsivos.">
+    <title>Contact - PORTAfolio</title>
+    <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
+    <link rel="icon" href="imagenes/LOGO.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="fondo">
+    <div class="overlay-bg"></div>
+    <div class="container">
+      <nav>
+        <h2 class="logo"><span class="blue">PORT</span>folio</h2>
+        <ul>
+          <li><a href="index-en.html">Home</a></li>
+          <li><a href="aboutme-en.html">About Me</a></li>
+          <li><a href="projects-en.html">Projects</a></li>
+          <li><a href="skills-en.html">Skills</a></li>
+          <li><a href="contact-en.html">Contact</a></li>
+        </ul>
+        <div class="top-buttons">
+          <!-- Language buttons -->
+          <button class="idioma-btn" id="es-btn" style="display: none">
+            <img
+              src="imagenes/es.png"
+              alt="Español"
+              style="width: 18px; height: 12px; margin-right: 5px"
+            />
+            Español
+          </button>
+          <button class="idioma-btn" id="en-btn" style="display: none">
+            <img
+              src="imagenes/en.png"
+              alt="English"
+              style="width: 18px; height: 12px; margin-right: 5px"
+            />
+            English
+          </button>
+          <button class="modo-oscuro-toggle">🌙</button>
+        </div>
+      </nav>
+
+      <section class="seccion">
+        <h1>Contact</h1>
+        <p>
+          Would you like to work together? Fill out the form or reach out to me
+          via social media.
+        </p>
+
+        <form id="formulario" action="#" method="POST">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-comment"></i>
+            <textarea
+              name="message"
+              placeholder="Write your message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn" disabled>Send (Disabled)</button>
+
+          <p style="margin-top: 20px">
+            You can also write to me via
+            <a href="mailto:santiagocossu@gmail.com">email</a> or on
+            <a href="https://linkedin.com/in/santiagocossu" target="_blank"
+              >LinkedIn</a
+            >.
+          </p>
+        </form>
+      </section>
+    </div>
+    <footer class="footer">
+      <p>PORTfolio - Santiago Cossu © 2025 · All rights reserved.</p>
+    </footer>
+  </body>
+</html>

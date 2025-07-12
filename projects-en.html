@@ -1,0 +1,151 @@
+<!-- 
+Copyright © 2025 Santiago Cossu (SantiagoF2-cyber)
+This work is licensed under CC BY-NC-ND 4.0.
+Do not copy, modify or use without permission.
+Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio web de Santiago Cossu: diseño y desarrollo de sitios web modernos y responsivos.">
+    <title>Projects - PORTfolio</title>
+    <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
+    <link rel="icon" href="imagenes/LOGO.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="fondo">
+    <div class="overlay-bg"></div>
+    <div class="container">
+      <nav>
+        <h2 class="logo"><span class="blue">PORT</span>folio</h2>
+        <ul>
+          <li><a href="index-en.html">Home</a></li>
+          <li><a href="aboutme-en.html">About Me</a></li>
+          <li><a href="projects-en.html">Projects</a></li>
+          <li><a href="habilidades.html">Skills</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+        </ul>
+        <div class="top-buttons">
+          <!-- Language buttons -->
+          <button class="idioma-btn" id="es-btn" style="display: none">
+            <img
+              src="imagenes/es.png"
+              alt="Español"
+              style="width: 18px; height: 12px; margin-right: 5px"
+            />
+            Español
+          </button>
+          <button class="idioma-btn" id="en-btn" style="display: none">
+            <img
+              src="imagenes/en.png"
+              alt="English"
+              style="width: 18px; height: 12px; margin-right: 5px"
+            />
+            English
+          </button>
+          <button class="modo-oscuro-toggle">🌙</button>
+        </div>
+      </nav>
+
+      <section class="seccion">
+        <h2>Portfolio</h2>
+        <p>Here are some of the projects I've developed:</p>
+
+        <div class="portfolio-flex">
+          <div class="project transparente">
+            <h3>💪 NutriFuerza</h3>
+            <p>
+              Fictional corporate website, landing page in HTML and CSS with a
+              professional approach.
+            </p>
+            <p class="tags">HTML · CSS · Responsive</p>
+            <img src="imagenes/5-nutrifuerza.jpg" alt="NutriFuerza" />
+            <a
+              href="https://sfc2025.github.io/NutriFuerza"
+              target="_blank"
+              class="btn"
+            >
+              <i class="fas fa-link"></i> Visit Site
+            </a>
+          </div>
+
+          <div class="project transparente">
+            <h3>💪 KetoFácil</h3>
+            <p>
+              Keto recipe website, landing page in HTML and CSS with a clean
+              modern design.
+            </p>
+            <p class="tags">HTML · CSS · Responsive</p>
+            <img src="imagenes/6-ketofacil.jpg" alt="KetoFácil" />
+            <a
+              href="https://sfc2025.github.io/ketoFacil"
+              target="_blank"
+              class="btn"
+            >
+              <i class="fas fa-link"></i> Visit Site
+            </a>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 40px">🖼️ Project Gallery</h2>
+        <div class="slider">
+          <!-- KetoFácil -->
+          <div class="slide active">
+            <img src="imagenes/7-ketofacil-1.jpg" alt="KetoFácil Home" />
+          </div>
+          <div class="slide">
+            <img src="imagenes/8-ketofacil-2.jpg" alt="Products" />
+          </div>
+          <div class="slide">
+            <img src="imagenes/9-ketofacil-3.jpg" alt="Detail" />
+          </div>
+          <div class="slide">
+            <img src="imagenes/10-ketofacil-4.jpg" alt="Ebook" />
+          </div>
+
+          <!-- NutriFuerza -->
+          <div class="slide">
+            <img src="imagenes/11-nutrifuerza-1.jpg" alt="NutriFuerza Home" />
+          </div>
+          <div class="slide">
+            <img
+              src="imagenes/13-nutrifuerza-2.jpg"
+              alt="NutriFuerza Section 1"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="imagenes/14-nutrifuerza-3.jpg"
+              alt="NutriFuerza Section 2"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="imagenes/15-nutrifuerza-4.jpg"
+              alt="NutriFuerza Services"
+            />
+          </div>
+          <div class="slide">
+            <img src="imagenes/16-nutrifuerza-5.jpg" alt="NutriFuerza Footer" />
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button id="prev">⟨</button>
+          <button id="next">⟩</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>PORTfolio - Santiago Cossu © 2025 · All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
