@@ -93,37 +93,91 @@ if (btnEs && btnEn) {
   });
 }
 
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
 
-function showSlide(index) {
-  slides.forEach((slide) => slide.classList.remove("active"));
-  slides[index].classList.add("active");
+const nameInput = document.querySelector("input[name='name']");
+if (nameInput) {
+  nameInput.addEventListener("input", (e) => {
+    if (e.target.value.length < 3) {
+      e.target.style.borderColor = "#ff4d4d";
+    } else {
+      e.target.style.borderColor = "green";
+    }
+  });
 }
+// ===== FIN utilidades (idioma / dark mode / formularios) =====
+// ===== Slider de proyectos =====
+// ===== FIN utilidades (idioma / dark mode / formularios) =====
+// ===== Slider de proyectos (HTML actualizado: .dots y .dot) =====
+(function initProjectsSlider() {
+  const root = document.getElementById('projects-slider');
+  if (!root) return;
 
-if (slides.length > 0) {
-  showSlide(currentSlide);
+  const slides   = Array.from(root.querySelectorAll('.slide'));
+  const prevBtn  = root.querySelector('.slider-arrow.prev');
+  const nextBtn  = root.querySelector('.slider-arrow.next');
+  const dotsWrap = root.querySelector('.dots'); // <-- nuevo contenedor
 
-  const nextBtn = document.getElementById("next");
-  const prevBtn = document.getElementById("prev");
+  if (!slides.length || !prevBtn || !nextBtn || !dotsWrap) return;
 
-  if (nextBtn && prevBtn) {
-    nextBtn.addEventListener("click", () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    });
+  // Slide activo inicial
+  let index = slides.findIndex(s => s.classList.contains('active'));
+  if (index < 0) { index = 0; slides[0].classList.add('active'); }
 
-    prevBtn.addEventListener("click", () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    });
+  // Crear dots
+  dotsWrap.innerHTML = slides
+    .map((_, i) => `<button class="dot" aria-label="Ir al slide ${i + 1}"></button>`)
+    .join('');
+  const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+  dots[index].classList.add('active');
+
+  function goTo(i) {
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = (i + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
   }
-}
 
-document.querySelector("input[name='name']").addEventListener("input", (e) => {
-  if (e.target.value.length < 3) {
-    e.target.style.borderColor = "#ff4d4d";
-  } else {
-    e.target.style.borderColor = "green";
-  }
-});
+  const next = () => goTo(index + 1);
+  const prev = () => goTo(index - 1);
+
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  // Teclado
+  root.setAttribute('tabindex', '0');
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft')  prev();
+  });
+
+  // Touch (swipe)
+  let startX = 0, touching = false;
+  root.addEventListener('touchstart', (e) => {
+    touching = true;
+    startX = e.touches[0].clientX;
+    pause();
+  }, { passive: true });
+
+  root.addEventListener('touchend', (e) => {
+    if (!touching) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) (dx < 0 ? next() : prev());
+    touching = false;
+    resume();
+  });
+
+  // Autoplay con pausa en hover
+  let timer = null;
+  const INTERVAL = 4000;
+  function start() { if (!timer) timer = setInterval(next, INTERVAL); }
+  function pause() { if (timer) clearInterval(timer); timer = null; }
+  function resume() { start(); }
+
+  root.addEventListener('mouseenter', pause);
+  root.addEventListener('mouseleave', resume);
+
+  // Iniciar
+  start();
+})();

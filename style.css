@@ -182,11 +182,20 @@ button:hover {
   color: #fff;
   justify-content: space-between;
 }
+/* Estructura para que el footer se pegue al fondo sin gap */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container > .footer {
+  margin-top: auto; /* empuja el footer al final del viewport cuando hay poco contenido */
+}
 
 /* Ajuste general para secciones internas */
 .seccion {
   flex: 1;
-  padding: 50px 5%;
+  padding: 24px 5%;        /* antes 50px: reduce alto total */
   max-width: 800px;
   margin: auto;
   text-align: center;
@@ -215,8 +224,6 @@ form button {
   margin: auto;
 }
 
-/* Estilo de fondo transparente para cards sobre imagen */
-/* Transparencia elegante coherente con el portafolio */
 .transparente {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
@@ -312,6 +319,7 @@ body.modo-oscuro .transparente {
 .cert-card {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 20px;
@@ -327,6 +335,10 @@ body.modo-oscuro .transparente {
   max-width: 260px;
   width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* ➕ Anti-halo en bordes con blur */
+  overflow: hidden;
+  background-clip: padding-box;
 }
 
 .cert-card i {
@@ -441,10 +453,11 @@ body.modo-oscuro .habilidad i {
   backdrop-filter: blur(10px);
   color: #fff;
   text-align: center;
-  padding: 15px 10px;
-  margin-top: 50px;
+  padding: 12px 10px;
+  margin-top: 0;           /* pegado al contenido, sin línea de fondo */
   font-size: 0.9rem;
 }
+
 
 body.modo-oscuro .footer {
   background: rgba(0, 0, 0, 0.3);
@@ -495,55 +508,98 @@ body.modo-oscuro .footer {
 .slide {
   display: none;
   width: 100%;
-  height: 100%;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  object-fit: scale-down;
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
-  border-radius: 12px;
-}
-
-@media (max-width: 768px) {
-  .slide img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    border-radius: 12px;
-  }
 }
 
 .slide.active {
   display: block;
 }
 
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.slide img {
+  width: 100%;
+  height: clamp(
+    280px,
+    55vh,
+    560px
+  ); /* menor altura para que quepa el footer */
+  display: block;
+  margin: 0;
+  border-radius: 14px;
+  object-fit: contain; /* no recorta los mockups */
+  object-position: center;
 }
 
-.slider-controls button {
-  background: rgba(255, 255, 255, 0.12);
-  border: none;
+/* Flechas superpuestas */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  padding: 8px 12px;
-  margin: 0 5px;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   cursor: pointer;
-  border-radius: 5px;
   backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  z-index: 3;
 }
 
-.slider-controls button:hover {
-  background: rgba(0, 0, 0, 0.4);
+.slider-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.slider-arrow.prev {
+  left: 10px;
+}
+.slider-arrow.next {
+  right: 10px;
+}
+
+/* Dots / paginación visibles y usables */
+/* Dots ocultos (sin paginación visible) */
+.slider-fixed .dots,
+.slider-fixed .dots * {
+  display: none !important;
+}
+
+/* === Ajustes específicos del slider fijo === */
+.slider-fixed {
+  position: relative;
+}
+
+/* Visibilidad de slides (tu HTML usa .slide y .active) */
+.slider-fixed .slides {
+  position: relative;
+}
+.slider-fixed .slide {
+  display: none;
+}
+.slider-fixed .slide.active {
+  display: block;
+}
+
+/* Flechas: mantenemos tu estilo, solo alistamos posiciones */
+.slider-fixed .slider-arrow.prev {
+  left: 12px;
+}
+.slider-fixed .slider-arrow.next {
+  right: 12px;
+}
+
+@media (max-width: 768px) {
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .slider-dots {
+    bottom: 8px;
+  }
 }
 
 body.modo-oscuro .project,
@@ -952,17 +1008,21 @@ nav ul li {
 }
 
 .slider {
-  max-width: 100%;
+  position: relative;
+  max-width: min(1100px, 92vw);
   width: 100%;
-  overflow: hidden;
-  padding: 0;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
+  overflow: hidden;
+  border-radius: 0;                /* sin borde redondeado */
+  background: transparent;         /* sin fondo translúcido */
+  backdrop-filter: none;           /* elimina el blur que genera halo */
+  padding: 0;                      /* el contenido es la imagen */
+  /* sin height fijo: la altura la define la imagen del slide */
+}
+
+body.modo-oscuro .slider {
+  background: transparent;   /* sin fondo en dark mode */
+  border: 0;                 /* sin borde para evitar halo */
 }
 
 @media (max-width: 768px) {
@@ -1102,3 +1162,25 @@ button,
     display: block;
   }
 }
+
+/* Título y epígrafe de sección Portafolio (mismo tamaño que "Certificaciones") */
+.section-title {
+  font-size: 2rem;                 /* igual a #certificaciones h2 */
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-align: center;
+  margin: 20px auto 8px;           /* antes 40/20: sube el título */
+  color: #ffffff;
+}
+
+.section-subtitle {
+  text-align: center;
+  margin: 0 auto 16px;             /* antes 24px: compacta el epígrafe */
+  max-width: 720px;
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;                  /* cuerpo estándar */
+}
+
+/* Modo oscuro: mantener contraste */
+body.modo-oscuro .section-title { color: #fff; }
+body.modo-oscuro .section-subtitle { color: rgba(255,255,255,0.85); }
