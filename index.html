@@ -9,7 +9,10 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portafolio web de Santiago Cossu: diseño y desarrollo de sitios web modernos y responsivos.">
+    <meta
+      name="description"
+      content="Portafolio web de Santiago Cossu: diseño y desarrollo de sitios web modernos y responsivos."
+    />
     <title>PORTAfolio</title>
     <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
     <link rel="icon" href="imagenes/LOGO.png" />
@@ -57,15 +60,36 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           <h1>Santiago <span class="blue">Cossu</span></h1>
           <h3>Diseño y desarrollo sitios web</h3>
 
-          <div class="social">
-            <a href="#"><img src="imagenes/facebook.png" alt="Facebook" /></a>
-            <a href="#"><img src="imagenes/gmail.png" alt="Gmail" /></a>
-            <a href="#"><img src="imagenes/linkedin.png" alt="LinkedIn" /></a>
-            <a href="#"><img src="imagenes/correo.png" alt="Correo" /></a>
-            <a href="#"><img src="imagenes/instagram.png" alt="Instagram" /></a>
-          </div>
-          <button class="btn">Descargar CV</button>
+          <button class="btn" onclick="window.location.href='proyectos.html'">
+            Ver proyectos
+          </button>
         </div>
+
+        <!-- 📌 PANEL DINÁMICO A LA DERECHA -->
+        <div class="hero-widget transparente">
+          <h3>En qué puedo ayudarte</h3>
+          <p id="hero-rotating-text" class="fade-in">
+            Landing pages enfocadas en conversión
+          </p>
+          <ul class="hero-widget-dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LUCES / AGUACILES FLOTANDO -->
+      <div class="hero-fireflies">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </header>
   </body>

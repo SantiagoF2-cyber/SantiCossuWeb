@@ -93,7 +93,6 @@ if (btnEs && btnEn) {
   });
 }
 
-
 const nameInput = document.querySelector("input[name='name']");
 if (nameInput) {
   nameInput.addEventListener("input", (e) => {
@@ -104,80 +103,193 @@ if (nameInput) {
     }
   });
 }
-// ===== FIN utilidades (idioma / dark mode / formularios) =====
-// ===== Slider de proyectos =====
-// ===== FIN utilidades (idioma / dark mode / formularios) =====
-// ===== Slider de proyectos (HTML actualizado: .dots y .dot) =====
-(function initProjectsSlider() {
-  const root = document.getElementById('projects-slider');
-  if (!root) return;
 
-  const slides   = Array.from(root.querySelectorAll('.slide'));
-  const prevBtn  = root.querySelector('.slider-arrow.prev');
-  const nextBtn  = root.querySelector('.slider-arrow.next');
-  const dotsWrap = root.querySelector('.dots'); // <-- nuevo contenedor
+/* =========================
+   Tabs + Lightbox Galerías
+   ========================= */
+(function () {
+  // ---- Tabs ----
+  const tabButtons = Array.from(document.querySelectorAll(".tabs .tab"));
+  const tabPanels = Array.from(document.querySelectorAll(".tab-panel"));
 
-  if (!slides.length || !prevBtn || !nextBtn || !dotsWrap) return;
-
-  // Slide activo inicial
-  let index = slides.findIndex(s => s.classList.contains('active'));
-  if (index < 0) { index = 0; slides[0].classList.add('active'); }
-
-  // Crear dots
-  dotsWrap.innerHTML = slides
-    .map((_, i) => `<button class="dot" aria-label="Ir al slide ${i + 1}"></button>`)
-    .join('');
-  const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
-  dots[index].classList.add('active');
-
-  function goTo(i) {
-    slides[index].classList.remove('active');
-    dots[index].classList.remove('active');
-    index = (i + slides.length) % slides.length;
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
+  // Título dinámico (se crea si no existe)
+  const portfolio = document.getElementById("portfolio");
+  let titleEl = portfolio?.querySelector(".tab-current-title");
+  if (!titleEl && portfolio) {
+    titleEl = document.createElement("h3");
+    titleEl.className = "tab-current-title";
+    portfolio
+      .querySelector(".tab-panels")
+      ?.insertAdjacentElement("beforebegin", titleEl);
   }
 
-  const next = () => goTo(index + 1);
-  const prev = () => goTo(index - 1);
+  function setTitleFrom(btn) {
+    if (!titleEl) return;
+    // Toma el texto del botón de la pestaña como título
+    titleEl.textContent = btn?.textContent?.trim() || "";
+  }
+  function activateTab(btn) {
+    const targetId = btn.getAttribute("aria-controls");
 
-  nextBtn.addEventListener('click', next);
-  prevBtn.addEventListener('click', prev);
-  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+    // 1) Cambia estado visual de pestañas
+    tabButtons.forEach((b) => b.classList.toggle("active", b === btn));
+    tabButtons.forEach((b) => {
+      b.setAttribute("aria-selected", b === btn ? "true" : "false");
+      b.tabIndex = b === btn ? 0 : -1;
+    });
+
+    // 2) Muestra solo el panel objetivo
+    tabPanels.forEach((p) => p.classList.toggle("active", p.id === targetId));
+
+    // 3) Si el lightbox estaba abierto, lo cerramos para no mezclar galerías
+    if (!lightbox.classList.contains("hidden")) {
+      lightbox.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+    // Resetea referencias de navegación del lightbox
+    currentGallery = null;
+    currentIndex = 0;
+
+    // 4) Actualiza el título visible
+    setTitleFrom(btn);
+    // Lleva la vista al inicio del portafolio
+    portfolio?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Activación + navegación con flechas
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => activateTab(btn));
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        const dir = e.key === "ArrowRight" ? 1 : -1;
+        const idx = tabButtons.indexOf(btn);
+        const next =
+          tabButtons[(idx + dir + tabButtons.length) % tabButtons.length];
+        next.focus();
+        activateTab(next);
+      }
+    });
+  });
+
+  // Setea el título inicial si hay una pestaña marcada como activa
+  const initial =
+    tabButtons.find((b) => b.classList.contains("active")) || tabButtons[0];
+  if (initial) setTitleFrom(initial);
+
+  // ---- Lightbox ----
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox) return;
+
+  const imgEl = lightbox.querySelector(".lightbox-img");
+  const prevBtn = lightbox.querySelector(".lb-prev");
+  const nextBtn = lightbox.querySelector(".lb-next");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const backdrop = lightbox.querySelector(".lightbox-backdrop");
+
+  let currentGallery = null; // NodeList de imágenes
+  let currentIndex = 0;
+
+  function openLightbox(galleryImgs, index) {
+    currentGallery = galleryImgs;
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    imgEl.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add("hidden");
+    document.body.style.overflow = "";
+    currentGallery = null;
+  }
+
+  function updateLightbox() {
+    if (!currentGallery) return;
+    const el = currentGallery[currentIndex];
+    imgEl.src = el.getAttribute("data-full") || el.src;
+    imgEl.alt = el.alt || "Vista ampliada";
+  }
+
+  function go(delta) {
+    if (!currentGallery) return;
+    currentIndex =
+      (currentIndex + delta + currentGallery.length) % currentGallery.length;
+    updateLightbox();
+  }
+
+  // Delegación: click en cualquier imagen de .gallery-grid
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".gallery-grid img");
+    if (!img) return;
+    const grid = img.closest(".gallery-grid");
+    const imgs = Array.from(grid.querySelectorAll("img"));
+    const idx = imgs.indexOf(img);
+    openLightbox(imgs, idx);
+  });
+
+  // Controles
+  prevBtn.addEventListener("click", () => go(-1));
+  nextBtn.addEventListener("click", () => go(1));
+  closeBtn.addEventListener("click", closeLightbox);
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) closeLightbox();
+  });
 
   // Teclado
-  root.setAttribute('tabindex', '0');
-  root.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') next();
-    if (e.key === 'ArrowLeft')  prev();
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.classList.contains("hidden")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") go(-1);
+    if (e.key === "ArrowRight") go(1);
   });
-
-  // Touch (swipe)
-  let startX = 0, touching = false;
-  root.addEventListener('touchstart', (e) => {
-    touching = true;
-    startX = e.touches[0].clientX;
-    pause();
-  }, { passive: true });
-
-  root.addEventListener('touchend', (e) => {
-    if (!touching) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 50) (dx < 0 ? next() : prev());
-    touching = false;
-    resume();
-  });
-
-  // Autoplay con pausa en hover
-  let timer = null;
-  const INTERVAL = 4000;
-  function start() { if (!timer) timer = setInterval(next, INTERVAL); }
-  function pause() { if (timer) clearInterval(timer); timer = null; }
-  function resume() { start(); }
-
-  root.addEventListener('mouseenter', pause);
-  root.addEventListener('mouseleave', resume);
-
-  // Iniciar
-  start();
 })();
+
+// ===== Rotador de servicios en el hero (ES / EN según la página) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const textEl = document.getElementById("hero-rotating-text");
+  if (!textEl) return;
+
+  const dots = document.querySelectorAll(".hero-widget-dots li");
+
+  // Detectar idioma desde la etiqueta <html lang="...">
+  const lang = document.documentElement.lang || "es";
+
+  // Mensajes según idioma
+  const mensajes =
+    lang === "en"
+      ? [
+          "Conversion-focused landing pages for services and online mentoring.",
+          "End-to-end payment and booking flows (e.g. PayPal + Calendly).",
+          "Custom HubSpot modules and landing pages, easy for clients to edit.",
+          "Web apps with admin panels (Supabase, databases, appointments and patients).",
+        ]
+      : [
+          "Landing pages enfocadas en conversión para servicios y mentorías online.",
+          "Flujos completos de pago y agenda (ej. PayPal + Calendly).",
+          "Módulos y landings personalizadas en HubSpot, fáciles de editar por el cliente.",
+          "Aplicaciones web con panel de administración (Supabase, bases de datos, turnos y pacientes).",
+        ];
+
+  let index = 0;
+
+  function actualizarTexto() {
+    textEl.classList.remove("fade-in");
+    textEl.classList.add("fade-out");
+
+    setTimeout(() => {
+      index = (index + 1) % mensajes.length;
+      textEl.textContent = mensajes[index];
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+
+      textEl.classList.remove("fade-out");
+      textEl.classList.add("fade-in");
+    }, 300);
+  }
+
+  setInterval(actualizarTexto, 2600);
+});

@@ -31,12 +31,12 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         <ul>
           <li><a href="index-en.html">Home</a></li>
           <li><a href="aboutme-en.html">About Me</a></li>
-          <li><a href="projets-en.html">Projects</a></li>
+          <li><a href="projects-en.html">Projects</a></li>
           <li><a href="skills-en.html">Skills</a></li>
           <li><a href="contact-en.html">Contact</a></li>
         </ul>
         <div class="top-buttons">
-          <!-- Language buttons -->
+          <!-- Language buttons (kept hidden for now) -->
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
               src="imagenes/es.png"
@@ -57,97 +57,211 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         </div>
       </nav>
 
-      <section class="seccion">
+      <section class="seccion" id="portfolio">
         <h2 class="section-title">Portfolio</h2>
         <p class="section-subtitle">Some of the projects I’ve developed.</p>
 
-        <div class="slider slider-fixed" id="projects-slider">
-          <div class="slides">
-            <div class="slide active">
-              <img src="imagenes/11.jpg" alt="Project 01" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/2.jpg" alt="Project 02" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/3.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/4.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/14.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/15.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/16.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/17.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/18.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/knd1.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/knd2.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/knd3.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio1.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio21.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio22.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio23.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nexora1.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nexora2.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nexora3.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova1.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova2.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova3.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova4.jpg" alt="Project 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/111.jpg" alt="Project 03" />
+        <!-- Tabs -->
+        <div class="tabs" role="tablist" aria-label="Projects">
+          <button
+            class="tab active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tab-portafolio"
+            id="tabbtn-portafolio"
+          >
+            Personal Portfolio
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-nexora"
+            id="tabbtn-nexora"
+          >
+            Nexora
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-nova"
+            id="tabbtn-nova"
+          >
+            Nova
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-knd"
+            id="tabbtn-knd"
+          >
+            KND
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-mas"
+            id="tabbtn-mas"
+          >
+            More projects
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="tab-panels">
+          <!-- Personal Portfolio -->
+          <div
+            class="tab-panel active"
+            role="tabpanel"
+            id="tab-portafolio"
+            aria-labelledby="tabbtn-portafolio"
+          >
+            <div class="gallery-grid" data-gallery="portafolio">
+              <figure class="gallery-item">
+                <img src="imagenes/11.jpg" alt="PORTfolio · Home" />
+                <figcaption>PORTfolio · Home</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/2.jpg" alt="PORTfolio · About" />
+                <figcaption>PORTfolio · About</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/3.jpg" alt="PORTfolio · Projects" />
+                <figcaption>PORTfolio · Projects</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/4.jpg" alt="PORTfolio · Contact" />
+                <figcaption>PORTfolio · Contact</figcaption>
+              </figure>
             </div>
           </div>
 
-          <!-- Arrows (once) -->
-          <button class="slider-arrow prev" aria-label="Previous">⟨</button>
-          <button class="slider-arrow next" aria-label="Next">⟩</button>
+          <!-- Nexora -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-nexora"
+            aria-labelledby="tabbtn-nexora"
+          >
+            <div class="gallery-grid" data-gallery="nexora">
+              <figure class="gallery-item">
+                <img src="imagenes/nexora1.jpg" alt="Nexora · Landing" />
+                <figcaption>Nexora · Landing</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nexora2.jpg" alt="Nexora · Dashboard" />
+                <figcaption>Nexora · Dashboard</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nexora3.jpg" alt="Nexora · Mobile" />
+                <figcaption>Nexora · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
 
-          <!-- Dots -->
-          <div class="dots" aria-label="Indicators"></div>
+          <!-- Nova -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-nova"
+            aria-labelledby="tabbtn-nova"
+          >
+            <div class="gallery-grid" data-gallery="nova">
+              <figure class="gallery-item">
+                <img src="imagenes/nova1.jpg" alt="Nova · Hero" />
+                <figcaption>Nova · Hero</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nova2.jpg" alt="Nova · Grid" />
+                <figcaption>Nova · Grid</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nova3.jpg" alt="Nova · Detail" />
+                <figcaption>Nova · Detail</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nova4.jpg" alt="Nova · Mobile" />
+                <figcaption>Nova · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- KND -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-knd"
+            aria-labelledby="tabbtn-knd"
+          >
+            <div class="gallery-grid" data-gallery="knd">
+              <figure class="gallery-item">
+                <img src="imagenes/knd1.jpg" alt="KND · Home" />
+                <figcaption>KND · Home</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/knd2.jpg" alt="KND · Catalog" />
+                <figcaption>KND · Catalog</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/knd3.jpg" alt="KND · Detail" />
+                <figcaption>KND · Detail</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- More projects -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-mas"
+            aria-labelledby="tabbtn-mas"
+          >
+            <div class="gallery-grid" data-gallery="mas">
+              <figure class="gallery-item">
+                <img
+                  src="imagenes/14.jpg"
+                  alt="More · Landing"
+                  loading="lazy"
+                />
+                <figcaption>More · Landing</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  src="imagenes/15.jpg"
+                  alt="More · Services section"
+                  loading="lazy"
+                />
+                <figcaption>More · Services section</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/16.jpg" alt="More · Detail" loading="lazy" />
+                <figcaption>More · Detail</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/17.jpg" alt="More · Mobile" loading="lazy" />
+                <figcaption>More · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lightbox fullscreen -->
+        <div class="lightbox hidden" id="lightbox" aria-hidden="true">
+          <div class="lightbox-backdrop" data-close></div>
+          <button class="lightbox-btn lb-prev" aria-label="Previous">⟨</button>
+          <img class="lightbox-img" alt="Expanded view" />
+          <button class="lightbox-btn lb-next" aria-label="Next">⟩</button>
+          <button class="lightbox-close" aria-label="Close" title="Close">
+            ×
+          </button>
         </div>
       </section>
 
       <footer class="footer">
-        <p>PORTAfolio - Santiago Cossu © 2025 · All rights reserved.</p>
+        <p>PORTfolio - Santiago Cossu © 2025 · All rights reserved.</p>
       </footer>
     </div>
   </body>

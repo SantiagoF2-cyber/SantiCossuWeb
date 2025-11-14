@@ -57,91 +57,203 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         </div>
       </nav>
 
-       <section class="seccion">
+      <section class="seccion" id="portfolio">
         <h2 class="section-title">Portafolio</h2>
-        <p class="section-subtitle">Algunos de los proyectos que he desarrollado.</p>
-       <div class="slider slider-fixed" id="projects-slider">
-          <div class="slides">
-            <div class="slide active">
-              <img src="imagenes/11.jpg" alt="Proyecto 01" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/2.jpg" alt="Proyecto 02" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/3.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/4.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/14.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/15.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/16.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/17.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/18.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/knd1.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/knd2.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/knd3.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio1.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio21.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio22.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/portafolio23.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nexora1.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nexora2.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nexora3.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova1.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova2.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova3.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/nova4.jpg" alt="Proyecto 03" />
-            </div>
-            <div class="slide">
-              <img src="imagenes/111.jpg" alt="Proyecto 03" />
+        <p class="section-subtitle">
+          Algunos de los proyectos que he desarrollado.
+        </p>
+
+        <!-- Pestañas -->
+        <div class="tabs" role="tablist" aria-label="Proyectos">
+          <button
+            class="tab active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tab-portafolio"
+            id="tabbtn-portafolio"
+          >
+            Portafolio propio
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-nexora"
+            id="tabbtn-nexora"
+          >
+            Nexora
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-nova"
+            id="tabbtn-nova"
+          >
+            Nova
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-knd"
+            id="tabbtn-knd"
+          >
+            KNS
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-mas"
+            id="tabbtn-mas"
+          >
+            Más proyectos
+          </button>
+        </div>
+
+        <!-- Paneles -->
+        <div class="tab-panels">
+          <!-- PORTAfolio -->
+          <div
+            class="tab-panel active"
+            role="tabpanel"
+            id="tab-portafolio"
+            aria-labelledby="tabbtn-portafolio"
+          >
+            <div class="gallery-grid" data-gallery="portafolio">
+              <figure class="gallery-item">
+                <img src="imagenes/11.jpg" alt="PORTAfolio · Home" />
+                <figcaption>PORTAfolio · Inicio</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/2.jpg" alt="PORTAfolio · About" />
+                <figcaption>PORTAfolio · acercademi</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/3.jpg" alt="PORTAfolio · Projects" />
+                <figcaption>PORTAfolio · Proyecto</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/4.jpg" alt="PORTAfolio · Contact" />
+                <figcaption>PORTAfolio · contacto</figcaption>
+              </figure>
             </div>
           </div>
 
-          <!-- Flechas (una sola vez) -->
-          <button class="slider-arrow prev" aria-label="Anterior">⟨</button>
-          <button class="slider-arrow next" aria-label="Siguiente">⟩</button>
+          <!-- Nexora -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-nexora"
+            aria-labelledby="tabbtn-nexora"
+          >
+            <div class="gallery-grid" data-gallery="nexora">
+              <figure class="gallery-item">
+                <img src="imagenes/nexora1.jpg" alt="Nexora · Landing" />
+                <figcaption>Nexora · Landing</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nexora2.jpg" alt="Nexora · Dashboard" />
+                <figcaption>Nexora · Dashboard</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nexora3.jpg" alt="Nexora · Mobile" />
+                <figcaption>Nexora · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
 
-          <!-- Puntos -->
-          <div class="dots" aria-label="Indicadores"></div>
+          <!-- Nova -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-nova"
+            aria-labelledby="tabbtn-nova"
+          >
+            <div class="gallery-grid" data-gallery="nova">
+              <figure class="gallery-item">
+                <img src="imagenes/nova1.jpg" alt="Nova · Hero" />
+                <figcaption>Nova · Hero</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nova2.jpg" alt="Nova · Grid" />
+                <figcaption>Nova · Grid</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nova3.jpg" alt="Nova · Detail" />
+                <figcaption>Nova · Detail</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/nova4.jpg" alt="Nova · Mobile" />
+                <figcaption>Nova · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- KNS -->
+          <div
+            class="tab-panel"
+            role="tabpanel"
+            id="tab-knd"
+            aria-labelledby="tabbtn-knd"
+          >
+            <div class="gallery-grid" data-gallery="knd">
+              <figure class="gallery-item">
+                <img src="imagenes/knd1.jpg" alt="KND · Inicio" />
+                <figcaption>KNS · Inicio</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/knd2.jpg" alt="KND · Catálogo" />
+                <figcaption>KNS · Catálogo</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img src="imagenes/knd3.jpg" alt="KND · Detalle" />
+                <figcaption>KNS · Detalle</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <!-- Más proyectos -->
+        <div
+          class="tab-panel"
+          role="tabpanel"
+          id="tab-mas"
+          aria-labelledby="tabbtn-mas"
+        >
+          <div class="gallery-grid" data-gallery="mas">
+            <figure class="gallery-item">
+              <img src="imagenes/14.jpg" alt="Más · Landing" loading="lazy" />
+              <figcaption>Más · Landing</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="imagenes/15.jpg"
+                alt="Más · Sección Servicios"
+                loading="lazy"
+              />
+              <figcaption>Más · Sección Servicios</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="imagenes/16.jpg" alt="Más · Detalle" loading="lazy" />
+              <figcaption>Más · Detalle</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="imagenes/17.jpg" alt="Más · Mobile" loading="lazy" />
+              <figcaption>Más · Mobile</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Lightbox fullscreen (fondo transparente oscuro, flechas izquierda/derecha) -->
+        <div class="lightbox hidden" id="lightbox" aria-hidden="true">
+          <div class="lightbox-backdrop" data-close></div>
+          <button class="lightbox-btn lb-prev" aria-label="Anterior">⟨</button>
+          <img class="lightbox-img" alt="Vista ampliada" />
+          <button class="lightbox-btn lb-next" aria-label="Siguiente">⟩</button>
+          <button class="lightbox-close" aria-label="Cerrar" title="Cerrar">
+            ×
+          </button>
         </div>
       </section>
 
