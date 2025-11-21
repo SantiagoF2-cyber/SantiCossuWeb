@@ -815,18 +815,46 @@ body.modo-oscuro form button:hover {
 }
 
 @media (max-width: 768px) {
+  /* Nav en columna para poder reordenar elementos */
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+  /* 👉 La barra de menús va PRIMERO (arriba del logo PORTAfolio) */
   nav ul {
+    order: 1;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-    padding: 10px 0;
     gap: 16px;
+    padding: 36px 0 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Logo PORTAfolio queda debajo del menú */
+  .logo {
+    order: 2;
+    margin-top: 4px;
+  }
+
+  /* Botones de idioma / modo oscuro (si los hay) abajo del logo */
+  .top-buttons {
+    order: 3;
+    margin-top: 6px;
   }
 
   nav ul li {
+    flex: 0 0 auto;
     font-size: 0.95rem;
   }
 
-  nav {
-    overflow-x: auto;
+  nav ul::-webkit-scrollbar {
+    display: none;
   }
 }
 
