@@ -737,7 +737,7 @@ body.modo-oscuro form button:hover {
 @media (max-width: 480px) {
   .hero {
     min-height: 100vh;
-    padding: 60px 10px 100px; /* antes 20px 20px 20px > empujo todo el bloque hacia abajo */
+    padding: 60px 20px 20px; /* antes 20px 20px 20px > empujo todo el bloque hacia abajo */
     background-position: right center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -759,7 +759,7 @@ body.modo-oscuro form button:hover {
   }
 
   .text {
-    margin-top: 10px;
+    margin-top: -30px;
     margin-bottom: 20px;
   }
 
