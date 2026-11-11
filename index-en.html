@@ -813,5 +813,54 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         <span></span>
       </div>
     </header>
+
+    <script>
+      (() => {
+        const panel = document.querySelector(".home-page .hero-widget");
+
+        if (!panel) return;
+
+        // Solo activar con mouse y movimiento permitido
+        const mouseDisponible = window.matchMedia(
+          "(hover: hover) and (pointer: fine)",
+        ).matches;
+
+        const reducirMovimiento = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (!mouseDisponible || reducirMovimiento) return;
+
+        let frame = null;
+
+        // Activar efecto luminoso
+        panel.addEventListener("pointerenter", () => {
+          panel.classList.add("glow-active");
+        });
+
+        // Seguir la posición del cursor
+        panel.addEventListener("pointermove", (event) => {
+          const rect = panel.getBoundingClientRect();
+
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+
+          if (frame !== null) {
+            cancelAnimationFrame(frame);
+          }
+
+          frame = requestAnimationFrame(() => {
+            panel.style.setProperty("--glow-x", `${x}px`);
+            panel.style.setProperty("--glow-y", `${y}px`);
+            frame = null;
+          });
+        });
+
+        // Desactivar al salir
+        panel.addEventListener("pointerleave", () => {
+          panel.classList.remove("glow-active");
+        });
+      })();
+    </script>
   </body>
 </html>
