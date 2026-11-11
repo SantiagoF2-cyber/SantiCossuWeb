@@ -526,6 +526,108 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           transition: none;
         }
       }
+      /* ======================================
+   EFECTOS PREMIUM DEL INICIO
+====================================== */
+
+      /* Aurora que sigue al mouse */
+
+      .home-page .hero-widget::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        z-index: 0;
+
+        background: radial-gradient(
+          340px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+          rgba(0, 224, 255, 0.18),
+          rgba(0, 219, 167, 0.07) 40%,
+          transparent 75%
+        );
+
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .home-page .hero-widget.glow-active::after {
+        opacity: 1;
+      }
+
+      .home-page .hero-widget > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Degradado animado del nombre */
+
+      .home-page .hero-content .text h1 .blue {
+        background-size: 220% 100%;
+        animation: homeGradientMove 6s ease-in-out infinite;
+      }
+
+      @keyframes homeGradientMove {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Aparición escalonada de tecnologías */
+
+      .home-page .home-tech span {
+        animation: homeTagReveal 0.65s ease both;
+      }
+
+      .home-page .home-tech span:nth-child(1) {
+        animation-delay: 0.35s;
+      }
+
+      .home-page .home-tech span:nth-child(2) {
+        animation-delay: 0.47s;
+      }
+
+      .home-page .home-tech span:nth-child(3) {
+        animation-delay: 0.59s;
+      }
+
+      .home-page .home-tech span:nth-child(4) {
+        animation-delay: 0.71s;
+      }
+
+      .home-page .home-tech span:nth-child(5) {
+        animation-delay: 0.83s;
+      }
+
+      @keyframes homeTagReveal {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Respetar preferencias de movimiento */
+
+      @media (prefers-reduced-motion: reduce) {
+        .home-page .hero-widget::after {
+          display: none;
+        }
+
+        .home-page .hero-content .text h1 .blue,
+        .home-page .home-tech span {
+          animation: none;
+        }
+      }
     </style>
   </head>
 
