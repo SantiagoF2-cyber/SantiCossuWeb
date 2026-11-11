@@ -9,70 +9,88 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- SEO -->
     <title>Santiago Cossu | Freelance Web Developer</title>
-
     <meta
       name="description"
       content="Santiago Cossu is a freelance web developer based in Argentina. Explore his portfolio, web projects, React development, GoHighLevel, HubSpot, and CRM solutions."
     />
-
     <link
       rel="canonical"
       href="https://santiagof2-cyber.github.io/SantiCossuWeb/index-en.html"
     />
-
     <!-- Languages -->
     <link
       rel="alternate"
       hreflang="en"
       href="https://santiagof2-cyber.github.io/SantiCossuWeb/index-en.html"
     />
-
     <link
       rel="alternate"
       hreflang="es"
       href="https://santiagof2-cyber.github.io/SantiCossuWeb/"
     />
-
     <!-- Social sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-
     <meta
       property="og:title"
       content="Santiago Cossu | Freelance Web Developer"
     />
-
     <meta
       property="og:description"
       content="Professional portfolio of Santiago Cossu. Custom web development, landing pages, React, GoHighLevel, HubSpot, and CRM solutions."
     />
-
     <meta
       property="og:url"
       content="https://santiagof2-cyber.github.io/SantiCossuWeb/index-en.html"
     />
-
+    <!-- Main image for social media previews -->
+    <meta
+      property="og:image"
+      content="https://santiagof2-cyber.github.io/SantiCossuWeb/imagenes/foto-perfil.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Professional portrait of Santiago Cossu, freelance web developer"
+    />
     <!-- Original assets -->
     <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
     <link rel="icon" href="imagenes/LOGO.png" />
     <link rel="stylesheet" href="style.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
     <script src="script.js" defer></script>
-
+    <!-- Structured data: professional profile -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://santiagof2-cyber.github.io/SantiCossuWeb/#person",
+        "name": "Santiago Cossu",
+        "url": "https://santiagof2-cyber.github.io/SantiCossuWeb/",
+        "image": "https://santiagof2-cyber.github.io/SantiCossuWeb/imagenes/foto-perfil.png",
+        "jobTitle": "Freelance web developer",
+        "description": "Freelance web developer specializing in custom websites, landing pages, React, Node.js, GoHighLevel, and HubSpot.",
+        "sameAs": ["https://github.com/SantiagoF2-cyber"],
+        "knowsAbout": [
+          "Web development",
+          "React",
+          "JavaScript",
+          "Node.js",
+          "GoHighLevel",
+          "HubSpot",
+          "Responsive web design"
+        ]
+      }
+    </script>
     <style>
       /* ===================================
        HOME - CUSTOM DESIGN
        Styles exclusive to this page
     =================================== */
-
       .home-page .hero {
         min-height: 100vh;
         min-height: 100svh;
@@ -83,14 +101,11 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         align-items: stretch;
         overflow: hidden;
       }
-
       .home-page .hero nav {
         position: relative;
         z-index: 10;
       }
-
       /* MAIN CONTENT */
-
       .home-page .hero-content {
         width: 100%;
         max-width: 1360px;
@@ -105,9 +120,7 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         text-align: left;
         flex: 1;
       }
-
       /* INTRODUCTION */
-
       .home-page .hero-content .text {
         width: 100%;
         max-width: 660px;
@@ -115,7 +128,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         text-align: left;
         animation: homeFadeLeft 0.85s ease both;
       }
-
       .home-page .home-eyebrow {
         display: inline-flex;
         align-items: center;
@@ -130,12 +142,10 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         font-weight: 600;
         letter-spacing: 0.3px;
       }
-
       .home-page .home-eyebrow i {
         color: #00e0ff;
         font-size: 0.55rem;
       }
-
       .home-page .hero-content .text h1 {
         font-size: clamp(2.9rem, 5.4vw, 5.2rem);
         line-height: 1.12;
@@ -145,12 +155,10 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         font-weight: 800;
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       }
-
       .home-page .hero-content .text h1 .blue {
         display: inline-block;
         padding-bottom: 5px;
       }
-
       .home-page .home-description {
         color: rgba(255, 255, 255, 0.91);
         font-size: clamp(1.06rem, 1.5vw, 1.2rem);
@@ -158,11 +166,9 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         max-width: 590px;
         margin: 0 0 18px;
       }
-
       .home-page .home-description strong {
         color: #fff;
       }
-
       .home-page .home-description-secondary {
         color: rgba(255, 255, 255, 0.7);
         font-size: 0.99rem;
@@ -170,9 +176,7 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         max-width: 580px;
         margin-bottom: 30px;
       }
-
       /* BUTTONS */
-
       .home-page .home-actions {
         display: flex;
         flex-wrap: wrap;
@@ -180,7 +184,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         align-items: center;
         margin-top: 30px;
       }
-
       .home-page .home-btn {
         display: inline-flex;
         align-items: center;
@@ -197,39 +200,31 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           box-shadow 0.25s ease,
           background 0.25s ease;
       }
-
       .home-page .home-btn-primary {
         background: linear-gradient(90deg, #00e0ff, #00dba7);
         color: #082323;
         border: 1px solid transparent;
       }
-
       .home-page .home-btn-secondary {
         background: rgba(255, 255, 255, 0.07);
         border: 1px solid rgba(255, 255, 255, 0.5);
         color: #fff;
       }
-
       .home-page .home-btn:hover {
         transform: translateY(-4px);
       }
-
       .home-page .home-btn-primary:hover {
         background: #00e0ff;
         box-shadow: 0 10px 28px rgba(0, 224, 255, 0.2);
       }
-
       .home-page .home-btn-secondary:hover {
         background: rgba(255, 255, 255, 0.15);
       }
-
       .home-page .home-btn:focus-visible {
         outline: 2px solid #00e0ff;
         outline-offset: 4px;
       }
-
       /* TECHNOLOGY TAGS */
-
       .home-page .home-tech {
         display: flex;
         flex-wrap: wrap;
@@ -237,7 +232,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         gap: 10px;
         margin-top: 35px;
       }
-
       .home-page .home-tech span {
         padding: 7px 12px;
         border: 1px solid rgba(255, 255, 255, 0.16);
@@ -246,11 +240,9 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         font-size: 0.8rem;
         color: rgba(255, 255, 255, 0.83);
       }
-
       /* ===================================
        SERVICES PANEL
     =================================== */
-
       .home-page .hero-widget {
         width: 100%;
         max-width: none;
@@ -273,7 +265,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         -webkit-backdrop-filter: blur(14px);
         animation: homeFadeRight 0.9s ease both;
       }
-
       .home-page .hero-widget::before {
         content: "";
         position: absolute;
@@ -287,7 +278,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         pointer-events: none;
         animation: homeGlow 7s ease-in-out infinite;
       }
-
       .home-page .home-widget-label {
         color: #8cf1e3;
         font-size: 0.82rem;
@@ -296,16 +286,13 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         text-transform: uppercase;
         margin-bottom: 12px;
       }
-
       .home-page .hero-widget h2 {
         color: #fff;
         font-size: clamp(1.5rem, 2.5vw, 2rem);
         line-height: 1.3;
         margin-bottom: 15px;
       }
-
       /* ORIGINAL ROTATING TEXT */
-
       .home-page #hero-rotating-text {
         font-size: 1.13rem;
         line-height: 1.65;
@@ -314,27 +301,22 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         min-height: 54px;
         margin: 0 0 10px;
       }
-
       .home-page .hero-widget-dots {
         margin: 6px 0 26px;
         display: flex;
         gap: 8px;
       }
-
       .home-page .hero-widget-dots li {
         width: 8px;
         height: 8px;
       }
-
       /* SERVICES */
-
       .home-page .home-services {
         display: flex;
         flex-direction: column;
         gap: 12px;
         width: 100%;
       }
-
       .home-page .home-service {
         display: flex;
         align-items: center;
@@ -348,13 +330,11 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           background 0.25s ease,
           border-color 0.25s ease;
       }
-
       .home-page .home-service:hover {
         transform: translateX(5px);
         background: rgba(0, 224, 255, 0.07);
         border-color: rgba(0, 224, 255, 0.25);
       }
-
       .home-page .home-service-icon {
         width: 44px;
         height: 44px;
@@ -367,11 +347,9 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         background: rgba(0, 224, 255, 0.1);
         font-size: 1.2rem;
       }
-
       .home-page .home-service-info {
         min-width: 0;
       }
-
       .home-page .home-service-info h3 {
         color: #fff;
         font-size: 0.98rem;
@@ -381,18 +359,15 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         -webkit-text-fill-color: #fff;
         text-shadow: none;
       }
-
       .home-page .home-service-info p {
         color: rgba(255, 255, 255, 0.7);
         font-size: 0.87rem;
         line-height: 1.5;
         margin: 0;
       }
-
       /* ===================================
        ANIMATIONS
     =================================== */
-
       @keyframes homeFadeLeft {
         from {
           opacity: 0;
@@ -403,7 +378,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           transform: translateX(0);
         }
       }
-
       @keyframes homeFadeRight {
         from {
           opacity: 0;
@@ -414,7 +388,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           transform: translateX(0);
         }
       }
-
       @keyframes homeGlow {
         0%,
         100% {
@@ -426,11 +399,9 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           transform: scale(1.15);
         }
       }
-
       /* ===================================
        TABLET AND MOBILE
     =================================== */
-
       @media (max-width: 900px) {
         .home-page .hero-content {
           grid-template-columns: 1fr;
@@ -438,24 +409,20 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           padding: 55px 6% 70px;
           max-width: 750px;
         }
-
         .home-page .hero-content .text {
           max-width: 100%;
         }
-
         .home-page .hero-widget {
           margin: 0;
           max-width: 100%;
         }
       }
-
       @media (max-width: 768px) {
         .home-page .hero {
           padding: 0;
           align-items: stretch;
           justify-content: flex-start;
         }
-
         .home-page .hero nav {
           display: flex;
           flex-direction: column;
@@ -464,7 +431,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           width: 100%;
           padding: 20px 5%;
         }
-
         .home-page .hero nav ul {
           width: 100%;
           max-width: 100%;
@@ -474,7 +440,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           padding: 10px 0;
           margin-top: 0;
         }
-
         .home-page .hero-content {
           display: flex;
           flex-direction: column;
@@ -487,7 +452,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           padding: 44px 20px 65px;
           gap: 30px;
         }
-
         .home-page .hero-content .text {
           display: block;
           width: 100%;
@@ -495,11 +459,9 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           margin: 0;
           text-align: left;
         }
-
         .home-page .hero-content .text h1 {
           font-size: clamp(2.5rem, 8vw, 3.8rem);
         }
-
         .home-page .hero-widget {
           width: 100%;
           max-width: 100%;
@@ -507,59 +469,47 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           padding: 26px;
         }
       }
-
       @media (max-width: 480px) {
         .home-page .hero-content {
           padding: 28px 18px 55px;
         }
-
         .home-page .home-eyebrow {
           font-size: 0.75rem;
           margin-bottom: 20px;
         }
-
         .home-page .hero-content .text h1 {
           font-size: clamp(2.45rem, 10vw, 3.2rem);
           letter-spacing: -1px;
         }
-
         .home-page .home-description {
           font-size: 1rem;
           line-height: 1.7;
         }
-
         .home-page .home-actions {
           flex-direction: column;
           align-items: stretch;
         }
-
         .home-page .home-btn {
           width: 100%;
         }
-
         .home-page .home-tech {
           gap: 7px;
           margin-top: 25px;
         }
-
         .home-page .hero-widget {
           padding: 24px 20px;
         }
-
         .home-page .home-service {
           padding: 13px;
         }
       }
-
       /* ACCESSIBILITY */
-
       @media (prefers-reduced-motion: reduce) {
         .home-page .hero-content .text,
         .home-page .hero-widget,
         .home-page .hero-widget::before {
           animation: none;
         }
-
         .home-page .home-service,
         .home-page .home-btn {
           transition: none;
@@ -568,9 +518,7 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
       /* ======================================
    EFECTOS PREMIUM DEL INICIO
 ====================================== */
-
       /* Aurora que sigue al mouse */
-
       .home-page .hero-widget::after {
         content: "";
         position: absolute;
@@ -578,107 +526,112 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         border-radius: inherit;
         pointer-events: none;
         z-index: 0;
-
         background: radial-gradient(
           340px circle at var(--glow-x, 50%) var(--glow-y, 50%),
           rgba(0, 224, 255, 0.18),
           rgba(0, 219, 167, 0.07) 40%,
           transparent 75%
         );
-
         opacity: 0;
         transition: opacity 0.4s ease;
       }
-
       .home-page .hero-widget.glow-active::after {
         opacity: 1;
       }
-
       .home-page .hero-widget > * {
         position: relative;
         z-index: 1;
       }
-
       /* Degradado animado del nombre */
-
       .home-page .hero-content .text h1 .blue {
         background-size: 220% 100%;
         animation: homeGradientMove 6s ease-in-out infinite;
       }
-
       @keyframes homeGradientMove {
         0%,
         100% {
           background-position: 0% 50%;
         }
-
         50% {
           background-position: 100% 50%;
         }
       }
-
       /* Aparición escalonada de tecnologías */
-
       .home-page .home-tech span {
         animation: homeTagReveal 0.65s ease both;
       }
-
       .home-page .home-tech span:nth-child(1) {
         animation-delay: 0.35s;
       }
-
       .home-page .home-tech span:nth-child(2) {
         animation-delay: 0.47s;
       }
-
       .home-page .home-tech span:nth-child(3) {
         animation-delay: 0.59s;
       }
-
       .home-page .home-tech span:nth-child(4) {
         animation-delay: 0.71s;
       }
-
       .home-page .home-tech span:nth-child(5) {
         animation-delay: 0.83s;
       }
-
       @keyframes homeTagReveal {
         from {
           opacity: 0;
           transform: translateY(16px);
         }
-
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
-
       /* Respetar preferencias de movimiento */
-
       @media (prefers-reduced-motion: reduce) {
         .home-page .hero-widget::after {
           display: none;
         }
-
         .home-page .hero-content .text h1 .blue,
         .home-page .home-tech span {
           animation: none;
         }
       }
+      /* Professional portrait beside the introduction */
+      .home-page .home-intro {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+      .home-page .home-profile-photo {
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #00e0ff;
+        box-shadow: 0 0 22px rgba(0, 224, 255, 0.22);
+      }
+      .home-page .home-intro .home-eyebrow {
+        margin-bottom: 0;
+      }
+      @media (max-width: 480px) {
+        .home-page .home-profile-photo {
+          width: 75px;
+          height: 75px;
+        }
+        .home-page .home-intro {
+          gap: 12px;
+        }
+      }
     </style>
   </head>
-
   <body class="fondo home-page">
     <div class="overlay-bg"></div>
-
     <header class="hero">
       <!-- NAVIGATION -->
-
       <nav>
         <h2 class="logo"><span class="blue">PORT</span>folio</h2>
-
         <ul>
           <li>
             <a href="index-en.html" aria-current="page">Home</a>
@@ -688,7 +641,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           <li><a href="skills-en.html">Skills</a></li>
           <li><a href="contact-en.html">Contact</a></li>
         </ul>
-
         <div class="top-buttons">
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
@@ -700,7 +652,6 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
             />
             Español
           </button>
-
           <button class="idioma-btn" id="en-btn" style="display: none">
             <img
               src="imagenes/en.png"
@@ -713,49 +664,49 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           </button>
         </div>
       </nav>
-
       <!-- MAIN INTRODUCTION -->
-
       <main class="hero-content">
         <div class="text">
-          <span class="home-eyebrow">
-            <i class="fas fa-circle" aria-hidden="true"></i>
-            Web Development · CRM · UX/UI
-          </span>
-
+          <div class="home-intro">
+            <img
+              src="imagenes/foto-perfil.png"
+              alt="Santiago Cossu, freelance web developer from Argentina"
+              class="home-profile-photo"
+              width="90"
+              height="90"
+              decoding="async"
+            />
+            <span class="home-eyebrow">
+              <i class="fas fa-circle" aria-hidden="true"></i>
+              Web Development · CRM · UX/UI
+            </span>
+          </div>
           <h1>
             Hi, I'm
             <span class="blue">Santiago Cossu</span>
           </h1>
-
           <p class="home-description">
             I design, develop, and optimize
             <strong>websites and digital solutions</strong>
             that combine a great user experience with reliable functionality.
           </p>
-
           <p class="home-description-secondary">
             I work with technologies such as React, JavaScript, and Node.js, as
             well as platforms like GoHighLevel and HubSpot. I enjoy finding
             practical solutions tailored to each project.
           </p>
-
           <!-- CALL TO ACTION BUTTONS -->
-
           <div class="home-actions">
             <a href="projects-en.html" class="home-btn home-btn-primary">
               <i class="fas fa-code" aria-hidden="true"></i>
               View My Projects
             </a>
-
             <a href="contact-en.html" class="home-btn home-btn-secondary">
               <i class="fas fa-envelope" aria-hidden="true"></i>
               Let's Talk
             </a>
           </div>
-
           <!-- TECHNOLOGIES -->
-
           <div class="home-tech">
             <span>React</span>
             <span>Node.js</span>
@@ -764,38 +715,28 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
             <span>PHP</span>
           </div>
         </div>
-
         <!-- SERVICES PANEL -->
-
         <aside class="hero-widget transparente">
           <span class="home-widget-label"> Digital Solutions </span>
-
           <h2>How I Can Help You</h2>
-
           <!-- Keep the original ID and indicators
              for compatibility with script.js -->
-
           <p id="hero-rotating-text" class="fade-in">
             Conversion-focused landing pages
           </p>
-
           <ul class="hero-widget-dots" aria-label="Content indicators">
             <li class="active"></li>
             <li></li>
             <li></li>
             <li></li>
           </ul>
-
           <!-- SERVICES LIST -->
-
           <div class="home-services">
             <!-- WEBSITES -->
-
             <div class="home-service">
               <div class="home-service-icon">
                 <i class="fas fa-laptop-code" aria-hidden="true"></i>
               </div>
-
               <div class="home-service-info">
                 <h3>Websites & Landing Pages</h3>
                 <p>
@@ -804,14 +745,11 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
                 </p>
               </div>
             </div>
-
             <!-- CRM AND FUNNELS -->
-
             <div class="home-service">
               <div class="home-service-icon">
                 <i class="fas fa-layer-group" aria-hidden="true"></i>
               </div>
-
               <div class="home-service-info">
                 <h3>CRM & Sales Funnels</h3>
                 <p>
@@ -819,14 +757,11 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
                 </p>
               </div>
             </div>
-
             <!-- OPTIMIZATION -->
-
             <div class="home-service">
               <div class="home-service-icon">
                 <i class="fas fa-gears" aria-hidden="true"></i>
               </div>
-
               <div class="home-service-info">
                 <h3>Optimization & Integrations</h3>
                 <p>
@@ -838,9 +773,7 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           </div>
         </aside>
       </main>
-
       <!-- ANIMATED FIREFLIES -->
-
       <div class="hero-fireflies" aria-hidden="true">
         <span></span>
         <span></span>
@@ -852,49 +785,37 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         <span></span>
       </div>
     </header>
-
     <script>
       (() => {
         const panel = document.querySelector(".home-page .hero-widget");
-
         if (!panel) return;
-
         // Solo activar con mouse y movimiento permitido
         const mouseDisponible = window.matchMedia(
           "(hover: hover) and (pointer: fine)",
         ).matches;
-
         const reducirMovimiento = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         ).matches;
-
         if (!mouseDisponible || reducirMovimiento) return;
-
         let frame = null;
-
         // Activar efecto luminoso
         panel.addEventListener("pointerenter", () => {
           panel.classList.add("glow-active");
         });
-
         // Seguir la posición del cursor
         panel.addEventListener("pointermove", (event) => {
           const rect = panel.getBoundingClientRect();
-
           const x = event.clientX - rect.left;
           const y = event.clientY - rect.top;
-
           if (frame !== null) {
             cancelAnimationFrame(frame);
           }
-
           frame = requestAnimationFrame(() => {
             panel.style.setProperty("--glow-x", `${x}px`);
             panel.style.setProperty("--glow-y", `${y}px`);
             frame = null;
           });
         });
-
         // Desactivar al salir
         panel.addEventListener("pointerleave", () => {
           panel.classList.remove("glow-active");
