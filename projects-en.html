@@ -1,27 +1,155 @@
-<!-- 
+<!--
 Copyright © 2025 Santiago Cossu (SantiagoF2-cyber)
 This work is licensed under CC BY-NC-ND 4.0.
 Do not copy, modify or use without permission.
 Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
 -->
 <!doctype html>
+
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
+      content="Explore Santiago Cossu's web development projects, including React, Node.js, GoHighLevel, HubSpot CRM, PHP e-commerce, landing pages, and integrations."
       name="description"
-      content="Santiago Cossu’s web portfolio: design and development of modern, responsive websites."
     />
     <title>Projects - PORTfolio</title>
-    <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
-    <link rel="icon" href="imagenes/LOGO.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="imagenes/1-favicon.png" rel="icon" type="image/png" />
+    <link href="imagenes/LOGO.png" rel="icon" />
+    <link href="style.css" rel="stylesheet" />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
     />
-    <script src="script.js" defer></script>
+    <script defer="" src="script.js"></script>
+    <style>
+      /* Project-specific styles: no changes to style.css required */
+      #portfolio .tab-current-title {
+        display: none;
+      }
+      #portfolio .section-subtitle {
+        max-width: 800px;
+        line-height: 1.65;
+      }
+      #portfolio .tabs {
+        max-width: 1150px;
+        margin: 24px auto 22px;
+      }
+      #portfolio .tab.active {
+        background: rgba(0, 224, 255, 0.17);
+        border-color: rgba(0, 224, 255, 0.8);
+        box-shadow: 0 0 0 1px rgba(0, 224, 255, 0.13);
+      }
+      #portfolio .tab:focus-visible {
+        outline: 2px solid #00e0ff;
+        outline-offset: 3px;
+      }
+      #portfolio .project-description {
+        max-width: 930px;
+        margin: 0 auto 26px;
+        padding: clamp(20px, 3vw, 34px);
+        background: rgba(14, 29, 26, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(9px);
+        -webkit-backdrop-filter: blur(9px);
+        color: #fff;
+        text-align: left;
+      }
+      #portfolio .project-eyebrow {
+        display: block;
+        margin-bottom: 11px;
+        color: #8cf1e3;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      #portfolio .project-description h3 {
+        color: #fff;
+        font-size: clamp(1.28rem, 2.7vw, 1.7rem);
+        font-weight: 750;
+        line-height: 1.3;
+        margin: 0 0 16px;
+        overflow-wrap: anywhere;
+      }
+      #portfolio .project-description p {
+        margin: 0 0 13px;
+        color: rgba(255, 255, 255, 0.91);
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+      #portfolio .project-description p:last-of-type {
+        margin-bottom: 0;
+      }
+      #portfolio .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      #portfolio .project-tags span {
+        display: inline-block;
+        padding: 6px 11px;
+        background: rgba(0, 224, 255, 0.09);
+        border: 1px solid rgba(0, 224, 255, 0.23);
+        border-radius: 99px;
+        color: #d6ffff;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+      #portfolio .project-description .project-note {
+        margin-top: 18px;
+        padding-top: 13px;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(255, 255, 255, 0.73);
+        font-size: 0.87rem;
+        line-height: 1.55;
+      }
+      #portfolio .gallery-grid.single-project {
+        grid-template-columns: minmax(0, 820px);
+        justify-content: center;
+      }
+      #portfolio .single-project .gallery-item img {
+        aspect-ratio: auto;
+        max-height: 650px;
+        object-fit: contain;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      @media (max-width: 640px) {
+        #portfolio .tabs {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          justify-content: flex-start;
+          scroll-snap-type: x proximity;
+          scrollbar-width: thin;
+          padding: 4px 2px 12px;
+        }
+        #portfolio .tabs .tab {
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+        }
+        #portfolio .mobile-tabs-hint {
+          display: block;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 0.82rem;
+          margin-bottom: 14px;
+        }
+        #portfolio .project-description p {
+          font-size: 0.95rem;
+        }
+        #portfolio .gallery-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      @media (min-width: 641px) {
+        #portfolio .mobile-tabs-hint {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body class="fondo">
     <div class="overlay-bg"></div>
@@ -31,391 +159,785 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         <ul>
           <li><a href="index-en.html">Home</a></li>
           <li><a href="aboutme-en.html">About Me</a></li>
-          <li><a href="projects-en.html">Projects</a></li>
+          <li><a aria-current="page" href="projects-en.html">Projects</a></li>
           <li><a href="skills-en.html">Skills</a></li>
           <li><a href="contact-en.html">Contact</a></li>
         </ul>
         <div class="top-buttons">
-          <!-- Language buttons (kept hidden for now) -->
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
+              alt=""
+              aria-hidden="true"
+              height="12"
               src="imagenes/es.png"
-              alt="Español"
-              style="width: 18px; height: 12px; margin-right: 5px"
+              style="margin-right: 5px"
+              width="18"
             />
             Español
           </button>
           <button class="idioma-btn" id="en-btn" style="display: none">
             <img
+              alt=""
+              aria-hidden="true"
+              height="12"
               src="imagenes/en.png"
-              alt="English"
-              style="width: 18px; height: 12px; margin-right: 5px"
+              style="margin-right: 5px"
+              width="18"
             />
             English
           </button>
-          <button class="modo-oscuro-toggle">🌙</button>
+          <button aria-label="Toggle display mode" class="modo-oscuro-toggle">
+            🌙
+          </button>
         </div>
       </nav>
-
       <section class="seccion" id="portfolio">
-        <h2 class="section-title">Portfolio</h2>
-        <p class="section-subtitle">Some of the projects I’ve developed.</p>
-
-        <!-- Tabs -->
-        <div class="tabs" role="tablist" aria-label="Projects">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">
+          A selection of my work in web development, interfaces, e-commerce, and
+          CRM systems. Choose a project to explore my contributions and view its
+          images.
+        </p>
+        <!-- Project navigation -->
+        <div aria-label="Projects" class="tabs" role="tablist">
           <button
-            class="tab active"
-            role="tab"
+            aria-controls="tab-ghl"
             aria-selected="true"
-            aria-controls="tab-portafolio"
-            id="tabbtn-portafolio"
+            class="tab active"
+            id="tabbtn-ghl"
+            role="tab"
+            tabindex="0"
+            type="button"
           >
-            Personal portfolio
+            GoHighLevel
           </button>
           <button
-            class="tab"
-            role="tab"
+            aria-controls="tab-ecommerce"
             aria-selected="false"
+            class="tab"
+            id="tabbtn-ecommerce"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            PHP E-commerce
+          </button>
+          <button
+            aria-controls="tab-hubspot-crm"
+            aria-selected="false"
+            class="tab"
+            id="tabbtn-hubspot-crm"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            HubSpot CRM
+          </button>
+          <button
+            aria-controls="tab-portafolio"
+            aria-selected="false"
+            class="tab"
+            id="tabbtn-portafolio"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            Personal Portfolio
+          </button>
+          <button
             aria-controls="tab-nexora"
+            aria-selected="false"
+            class="tab"
             id="tabbtn-nexora"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
             Nexora
           </button>
           <button
-            class="tab"
-            role="tab"
-            aria-selected="false"
             aria-controls="tab-nova"
+            aria-selected="false"
+            class="tab"
             id="tabbtn-nova"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
             Nova
           </button>
           <button
-            class="tab"
-            role="tab"
-            aria-selected="false"
             aria-controls="tab-knd"
+            aria-selected="false"
+            class="tab"
             id="tabbtn-knd"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
-            KND
+            KNS
           </button>
           <button
-            class="tab"
-            role="tab"
-            aria-selected="false"
             aria-controls="tab-maquiladoras"
+            aria-selected="false"
+            class="tab"
             id="tabbtn-maquiladoras"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
             Maquiladoras
           </button>
           <button
-            class="tab"
-            role="tab"
-            aria-selected="false"
             aria-controls="tab-estudio"
+            aria-selected="false"
+            class="tab"
             id="tabbtn-estudio"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
-            Accounting firm
+            Accounting Firm
           </button>
           <button
-            class="tab"
-            role="tab"
-            aria-selected="false"
             aria-controls="tab-CafeNova"
-            id="tabbtn-CafeNova"
+            aria-selected="false"
+            class="tab"
+            id="tabbtn-cafenova"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
             Cafe Nova
           </button>
           <button
-            class="tab"
-            role="tab"
-            aria-selected="false"
             aria-controls="tab-HubSpot"
-            id="tabbtn-HubSpot"
+            aria-selected="false"
+            class="tab"
+            id="tabbtn-hubspot-galeria"
+            role="tab"
+            tabindex="-1"
+            type="button"
           >
-            HubSpot
+            HubSpot · Gallery
           </button>
         </div>
-
-        <!-- Panels -->
+        <p class="mobile-tabs-hint">Swipe the tabs to see more projects →</p>
+        <!-- All panels must remain inside .tab-panels -->
         <div class="tab-panels">
-          <!-- Personal portfolio -->
+          <!-- GoHighLevel -->
           <div
+            aria-labelledby="tabbtn-ghl"
             class="tab-panel active"
+            id="tab-ghl"
             role="tabpanel"
-            id="tab-portafolio"
-            aria-labelledby="tabbtn-portafolio"
           >
-            <div class="gallery-grid" data-gallery="portafolio-propio">
-              <figure class="gallery-item">
-                <img src="imagenes/1.jpg" alt="Personal portfolio · Home" />
-                <figcaption>Personal portfolio · Home</figcaption>
-              </figure>
+            <div class="project-description">
+              <span class="project-eyebrow">Sales funnel · CRM · UX/UI</span>
+              <h3>
+                Technical Funnel and CRM Implementation in GoHighLevel /
+                Captivation Hub
+              </h3>
+              <p>
+                I built the technical foundation of a system in
+                <strong>Captivation Hub (GoHighLevel)</strong>, including the
+                main funnel pages, appointment calendar, thank-you page, and 404
+                page. The work also covered UX/UI refinements, Spanish
+                localization, and configuration of the overall user flow.
+              </p>
+              <p>
+                I handled technical fixes, functional testing, and improvements
+                to make the experience clearer and prepare the system for future
+                expansion.
+              </p>
+              <div
+                aria-label="Project technologies and areas"
+                class="project-tags"
+              >
+                <span>GoHighLevel</span>
+                <span>Captivation Hub</span>
+                <span>Funnels</span>
+                <span>Appointment calendars</span>
+              </div>
+              <p class="project-note">
+                Illustrative image: AI-generated mockup based on a visual
+                structure similar to the implemented project, used to protect
+                client privacy.
+              </p>
+            </div>
+            <div class="gallery-grid single-project" data-gallery="ghl">
               <figure class="gallery-item">
                 <img
-                  src="imagenes/3.jpg"
-                  alt="Personal portfolio · Featured projects"
+                  alt="Illustrative mockup of the Captivation Hub funnel and CRM"
+                  loading="lazy"
+                  src="imagenes/implementación técnica embudo y CRM en GoHighLevel - Captivationhub.png"
                 />
-                <figcaption>Personal portfolio · Featured projects</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <img
-                  src="imagenes/4.jpg"
-                  alt="Personal portfolio · Certifications"
-                />
-                <figcaption>Personal portfolio · Certifications</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <img src="imagenes/5.jpg" alt="Personal portfolio · Contact" />
-                <figcaption>Personal portfolio · Contact</figcaption>
+                <figcaption>Captivation Hub · Funnel and CRM</figcaption>
               </figure>
             </div>
           </div>
-
+          <!-- PHP e-commerce -->
+          <div
+            aria-labelledby="tabbtn-ecommerce"
+            class="tab-panel"
+            id="tab-ecommerce"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow"
+                >Online store · Checkout · Shipping</span
+              >
+              <h3>
+                PHP/Bootstrap E-commerce Optimization — Checkout, Payments, and
+                Postal Code Shipping Quotes
+              </h3>
+              <p>
+                I optimized an online store built with
+                <strong>PHP and Bootstrap</strong>, improving the cart,
+                checkout, user registration, guest purchases, Mercado Pago and
+                bank transfer payments, minimum-order-weight validations, free
+                shipping by weight, and responsive layout.
+              </p>
+              <p>
+                I implemented a
+                <strong>postal code-based shipping calculator</strong> using a
+                rate table. It takes order weight, delivery method, and
+                destination category into account, with options for home
+                delivery, branch pickup, and manual delivery arrangements with
+                the seller.
+              </p>
+              <p>
+                I also tested the complete purchase flow, including shipping
+                calculations, passing shipping costs to payment, validating
+                Mercado Pago amounts, and confirmation emails for the customer
+                and store administrator.
+              </p>
+              <div
+                aria-label="Project technologies and areas"
+                class="project-tags"
+              >
+                <span>PHP</span>
+                <span>Bootstrap</span>
+                <span>Mercado Pago</span>
+                <span>Checkout</span>
+                <span>Postal code shipping</span>
+              </div>
+              <p class="project-note">
+                Illustrative image: AI-generated mockup used to protect the
+                client’s information. The technical improvements and
+                implementations described are my own work.
+              </p>
+            </div>
+            <div class="gallery-grid single-project" data-gallery="ecommerce">
+              <figure class="gallery-item">
+                <img
+                  alt="Illustrative PHP and Bootstrap e-commerce mockup with checkout and shipping calculator"
+                  loading="lazy"
+                  src="imagenes/Optimización de e-commerce PHP Bootstrap con checkout, pagos, envíos y cotizador por CP Proyect.png"
+                />
+                <figcaption>
+                  PHP/Bootstrap E-commerce · Checkout and Shipping
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- HubSpot CRM -->
+          <div
+            aria-labelledby="tabbtn-hubspot-crm"
+            class="tab-panel"
+            id="tab-hubspot-crm"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow">CRM · Sales pipeline · Leads</span>
+              <h3>
+                HubSpot CRM Setup and Organization for Sales Lead Management
+              </h3>
+              <p>
+                I configured and organized <strong>HubSpot CRM</strong> to
+                improve the tracking of leads and sales opportunities. This
+                included updating Contact and Deal properties, setting up the
+                B2C pipeline, and improving views, filters, and records.
+              </p>
+              <p>
+                I also verified lead intake from
+                <strong>Meta Ads, Wix, and web forms</strong>, field mapping,
+                and lead traceability, followed by functional testing and
+                implementation support.
+              </p>
+              <div
+                aria-label="Project technologies and areas"
+                class="project-tags"
+              >
+                <span>HubSpot</span>
+                <span>CRM</span>
+                <span>Pipeline B2C</span>
+                <span>Lead management</span>
+              </div>
+              <p class="project-note">
+                Illustrative image: AI-generated mockup based on a structure
+                similar to the implemented project, without exposing client
+                information.
+              </p>
+            </div>
+            <div class="gallery-grid single-project" data-gallery="hubspot-crm">
+              <figure class="gallery-item">
+                <img
+                  alt="Illustrative HubSpot CRM mockup for sales lead management"
+                  loading="lazy"
+                  src="imagenes/Implementación y organización de CRM en HubSpot para gestión comercial de leads.png"
+                />
+                <figcaption>HubSpot CRM · Lead Management</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- Personal portfolio -->
+          <div
+            aria-labelledby="tabbtn-portafolio"
+            class="tab-panel"
+            id="tab-portafolio"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow"
+                >Personal website · Responsive design</span
+              >
+              <h3>My Web Development Portfolio</h3>
+              <p>
+                I built this personal website to showcase my projects, skills,
+                and experience, focusing on content organization, intuitive
+                navigation, visual design, and a responsive experience across
+                devices.
+              </p>
+              <div
+                aria-label="Project technologies and areas"
+                class="project-tags"
+              >
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <div class="gallery-grid" data-gallery="portafolio">
+              <figure class="gallery-item">
+                <img
+                  alt="Personal Portfolio · Home"
+                  loading="lazy"
+                  src="imagenes/1.jpg"
+                />
+                <figcaption>Personal Portfolio · Home</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Personal Portfolio · Featured Projects"
+                  loading="lazy"
+                  src="imagenes/3.jpg"
+                />
+                <figcaption>Personal Portfolio · Featured Projects</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Personal Portfolio · Certifications"
+                  loading="lazy"
+                  src="imagenes/4.jpg"
+                />
+                <figcaption>Personal Portfolio · Certifications</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Personal Portfolio · Contact"
+                  loading="lazy"
+                  src="imagenes/5.jpg"
+                />
+                <figcaption>Personal Portfolio · Contact</figcaption>
+              </figure>
+            </div>
+          </div>
           <!-- Nexora -->
           <div
-            class="tab-panel"
-            role="tabpanel"
-            id="tab-nexora"
             aria-labelledby="tabbtn-nexora"
+            class="tab-panel"
+            id="tab-nexora"
+            role="tabpanel"
           >
+            <div class="project-description">
+              <span class="project-eyebrow"
+                >Landing page · Dashboard · Mobile</span
+              >
+              <h3>Nexora</h3>
+              <p>
+                A visual presentation of a digital project featuring a landing
+                page, dashboard-style interface, and mobile view. The focus is
+                on a clear interface and consistent visual design.
+              </p>
+            </div>
             <div class="gallery-grid" data-gallery="nexora">
               <figure class="gallery-item">
-                <img src="imagenes/nexora1.jpg" alt="Nexora · Landing" />
+                <img
+                  alt="Nexora · Landing"
+                  loading="lazy"
+                  src="imagenes/nexora1.jpg"
+                />
                 <figcaption>Nexora · Landing</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/nexora2.jpg" alt="Nexora · Dashboard" />
+                <img
+                  alt="Nexora · Dashboard"
+                  loading="lazy"
+                  src="imagenes/nexora2.jpg"
+                />
                 <figcaption>Nexora · Dashboard</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/nexora3.jpg" alt="Nexora · Mobile" />
+                <img
+                  alt="Nexora · Mobile"
+                  loading="lazy"
+                  src="imagenes/nexora3.jpg"
+                />
                 <figcaption>Nexora · Mobile</figcaption>
               </figure>
             </div>
           </div>
-
           <!-- Nova -->
           <div
-            class="tab-panel"
-            role="tabpanel"
-            id="tab-nova"
             aria-labelledby="tabbtn-nova"
+            class="tab-panel"
+            id="tab-nova"
+            role="tabpanel"
           >
+            <div class="project-description">
+              <span class="project-eyebrow"
+                >Interface · Components · Responsive</span
+              >
+              <h3>Nova</h3>
+              <p>
+                A website design concept featuring a prominent hero section,
+                content grid, detail view, and responsive layouts for mobile
+                devices.
+              </p>
+            </div>
             <div class="gallery-grid" data-gallery="nova">
               <figure class="gallery-item">
-                <img src="imagenes/nova1.jpg" alt="Nova · Hero" />
+                <img
+                  alt="Nova · Hero"
+                  loading="lazy"
+                  src="imagenes/nova1.jpg"
+                />
                 <figcaption>Nova · Hero</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/nova2.jpg" alt="Nova · Grid" />
+                <img
+                  alt="Nova · Grid"
+                  loading="lazy"
+                  src="imagenes/nova2.jpg"
+                />
                 <figcaption>Nova · Grid</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/nova3.jpg" alt="Nova · Detail" />
+                <img
+                  alt="Nova · Detail"
+                  loading="lazy"
+                  src="imagenes/nova3.jpg"
+                />
                 <figcaption>Nova · Detail</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/nova4.jpg" alt="Nova · Mobile" />
+                <img
+                  alt="Nova · Mobile"
+                  loading="lazy"
+                  src="imagenes/nova4.jpg"
+                />
                 <figcaption>Nova · Mobile</figcaption>
               </figure>
             </div>
           </div>
-
-          <!-- KND -->
+          <!-- KNS -->
           <div
-            class="tab-panel"
-            role="tabpanel"
-            id="tab-knd"
             aria-labelledby="tabbtn-knd"
+            class="tab-panel"
+            id="tab-knd"
+            role="tabpanel"
           >
+            <div class="project-description">
+              <span class="project-eyebrow"
+                >Catalog · Navigation · Product details</span
+              >
+              <h3>KNS</h3>
+              <p>
+                A website gallery focused on presenting a catalog through a home
+                page, product listings, and detail pages, with straightforward
+                navigation.
+              </p>
+            </div>
             <div class="gallery-grid" data-gallery="knd">
               <figure class="gallery-item">
-                <img src="imagenes/knd1.jpg" alt="KND · Home" />
-                <figcaption>KND · Home</figcaption>
+                <img alt="KNS · Home" loading="lazy" src="imagenes/knd1.jpg" />
+                <figcaption>KNS · Home</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/knd2.jpg" alt="KND · Catalog" />
-                <figcaption>KND · Catalog</figcaption>
+                <img
+                  alt="KNS · Catalog"
+                  loading="lazy"
+                  src="imagenes/knd2.jpg"
+                />
+                <figcaption>KNS · Catalog</figcaption>
               </figure>
               <figure class="gallery-item">
-                <img src="imagenes/knd3.jpg" alt="KND · Detail" />
-                <figcaption>KND · Detail</figcaption>
+                <img
+                  alt="KNS · Detail"
+                  loading="lazy"
+                  src="imagenes/knd3.jpg"
+                />
+                <figcaption>KNS · Detail</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- Maquiladoras -->
+          <div
+            aria-labelledby="tabbtn-maquiladoras"
+            class="tab-panel"
+            id="tab-maquiladoras"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow">Services website · Responsive</span>
+              <h3>Maquiladoras</h3>
+              <p>
+                A website concept designed to communicate services clearly
+                through informative sections, an organized business
+                presentation, and mobile-friendly layouts.
+              </p>
+            </div>
+            <div class="gallery-grid" data-gallery="maquiladoras">
+              <figure class="gallery-item">
+                <img
+                  alt="Maquiladoras · Landing"
+                  loading="lazy"
+                  src="imagenes/14.jpg"
+                />
+                <figcaption>Maquiladoras · Landing</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Maquiladoras · Services Section"
+                  loading="lazy"
+                  src="imagenes/15.jpg"
+                />
+                <figcaption>Maquiladoras · Services Section</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Maquiladoras · Detail"
+                  loading="lazy"
+                  src="imagenes/16.jpg"
+                />
+                <figcaption>Maquiladoras · Detail</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Maquiladoras · Mobile"
+                  loading="lazy"
+                  src="imagenes/17.jpg"
+                />
+                <figcaption>Maquiladoras · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- Accounting firm -->
+          <div
+            aria-labelledby="tabbtn-estudio"
+            class="tab-panel"
+            id="tab-estudio"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow">Business website · Services</span>
+              <h3>Accounting Firm</h3>
+              <p>
+                A professional website concept featuring services, business
+                information, and contact content. Its design aims to convey
+                trust and make information easy to find.
+              </p>
+            </div>
+            <div class="gallery-grid" data-gallery="estudio">
+              <figure class="gallery-item">
+                <img
+                  alt="Accounting Firm · Hero"
+                  loading="lazy"
+                  src="imagenes/9.jpg"
+                />
+                <figcaption>Accounting Firm · Hero</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Accounting Firm · Architecture"
+                  loading="lazy"
+                  src="imagenes/10.jpg"
+                />
+                <figcaption>Accounting Firm · Architecture</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Accounting Firm · Legal"
+                  loading="lazy"
+                  src="imagenes/12.jpg"
+                />
+                <figcaption>Accounting Firm · Legal</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Accounting Firm · Accounting"
+                  loading="lazy"
+                  src="imagenes/1111.jpg"
+                />
+                <figcaption>Accounting Firm · Accounting</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="Accounting Firm · About Us"
+                  loading="lazy"
+                  src="imagenes/13.jpg"
+                />
+                <figcaption>Accounting Firm · About Us</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- Cafe Nova -->
+          <div
+            aria-labelledby="tabbtn-cafenova"
+            class="tab-panel"
+            id="tab-CafeNova"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow">Visual design · Mockups</span>
+              <h3>Cafe Nova</h3>
+              <p>
+                A visual website concept focused on product presentation and
+                ease of navigation, featuring several views and design mockups.
+              </p>
+            </div>
+            <div class="gallery-grid" data-gallery="cafenova">
+              <figure class="gallery-item">
+                <img
+                  alt="CafeNova · Hero"
+                  loading="lazy"
+                  src="imagenes/mockups1.jpg"
+                />
+                <figcaption>CafeNova · Hero</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="CafeNova · Grid"
+                  loading="lazy"
+                  src="imagenes/mockups2.jpg"
+                />
+                <figcaption>CafeNova · Grid</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="CafeNova · Detail"
+                  loading="lazy"
+                  src="imagenes/mockups3.jpg"
+                />
+                <figcaption>CafeNova · Detail</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="CafeNova · Mobile"
+                  loading="lazy"
+                  src="imagenes/mockups4.jpg"
+                />
+                <figcaption>CafeNova · Mobile</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="CafeNova · Mobile"
+                  loading="lazy"
+                  src="imagenes/mockups5.jpg"
+                />
+                <figcaption>CafeNova · Mobile</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- HubSpot · Gallery -->
+          <div
+            aria-labelledby="tabbtn-hubspot-galeria"
+            class="tab-panel"
+            id="tab-HubSpot"
+            role="tabpanel"
+          >
+            <div class="project-description">
+              <span class="project-eyebrow">Platform · Screenshots</span>
+              <h3>HubSpot · Work Gallery</h3>
+              <p>
+                A selection of screenshots from work in HubSpot. This gallery is
+                separate from the sales lead management project to showcase both
+                areas of experience.
+              </p>
+            </div>
+            <div class="gallery-grid" data-gallery="hubspot-galeria">
+              <figure class="gallery-item">
+                <img
+                  alt="HubSpot · Hero"
+                  loading="lazy"
+                  src="imagenes/hub1.jpg"
+                />
+                <figcaption>HubSpot · Hero</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="HubSpot · Grid"
+                  loading="lazy"
+                  src="imagenes/hub2.jpg"
+                />
+                <figcaption>HubSpot · Grid</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="HubSpot · Detail"
+                  loading="lazy"
+                  src="imagenes/hub3.jpg"
+                />
+                <figcaption>HubSpot · Detail</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="HubSpot · Mobile"
+                  loading="lazy"
+                  src="imagenes/hub4.jpg"
+                />
+                <figcaption>HubSpot · Mobile</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  alt="HubSpot · Mobile"
+                  loading="lazy"
+                  src="imagenes/hub5.jpg"
+                />
+                <figcaption>HubSpot · Mobile</figcaption>
               </figure>
             </div>
           </div>
         </div>
-
-        <!-- Maquiladoras -->
-        <div
-          class="tab-panel"
-          role="tabpanel"
-          id="tab-maquiladoras"
-          aria-labelledby="tabbtn-maquiladoras"
-        >
-          <div class="gallery-grid" data-gallery="maquiladoras">
-            <figure class="gallery-item">
-              <img
-                src="imagenes/14.jpg"
-                alt="Maquiladoras · Landing"
-                loading="lazy"
-              />
-              <figcaption>Maquiladoras · Landing</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/15.jpg"
-                alt="Maquiladoras · Services section"
-                loading="lazy"
-              />
-              <figcaption>Maquiladoras · Services section</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/16.jpg"
-                alt="Maquiladoras · Detail"
-                loading="lazy"
-              />
-              <figcaption>Maquiladoras · Detail</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/17.jpg"
-                alt="Maquiladoras · Mobile"
-                loading="lazy"
-              />
-              <figcaption>Maquiladoras · Mobile</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <!-- Accounting firm -->
-        <div
-          class="tab-panel"
-          role="tabpanel"
-          id="tab-estudio"
-          aria-labelledby="tabbtn-estudio"
-        >
-          <div class="gallery-grid" data-gallery="accounting-firm">
-            <figure class="gallery-item">
-              <img
-                src="imagenes/9.jpg"
-                alt="Accounting firm · Hero"
-                loading="lazy"
-              />
-              <figcaption>Accounting firm · Hero</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/10.jpg"
-                alt="Accounting firm · Architecture"
-                loading="lazy"
-              />
-              <figcaption>Accounting firm · Architecture</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/12.jpg"
-                alt="Accounting firm · Legal"
-                loading="lazy"
-              />
-              <figcaption>Accounting firm · Legal</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/1111.jpg"
-                alt="Accounting firm · Accounting"
-                loading="lazy"
-              />
-              <figcaption>Accounting firm · Accounting</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img
-                src="imagenes/13.jpg"
-                alt="Accounting firm · About us"
-                loading="lazy"
-              />
-              <figcaption>Accounting firm · About us</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <!-- CafeNova -->
-        <div
-          class="tab-panel"
-          role="tabpanel"
-          id="tab-CafeNova"
-          aria-labelledby="tabbtn-CafeNova"
-        >
-          <div class="gallery-grid" data-gallery="CafeNova">
-            <figure class="gallery-item">
-              <img src="imagenes/mockups1.jpg" alt="CafeNova · Hero" />
-              <figcaption>CafeNova · Hero</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/mockups2.jpg" alt="CafeNova · Grid" />
-              <figcaption>CafeNova · Grid</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/mockups3.jpg" alt="CafeNova · Detail" />
-              <figcaption>CafeNova · Detail</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/mockups4.jpg" alt="CafeNova · Mobile" />
-              <figcaption>CafeNova · Mobile</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/mockups5.jpg" alt="CafeNova · Mobile" />
-              <figcaption>CafeNova · Mobile</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <!-- HubSpot -->
-        <div
-          class="tab-panel"
-          role="tabpanel"
-          id="tab-HubSpot"
-          aria-labelledby="tabbtn-HubSpot"
-        >
-          <div class="gallery-grid" data-gallery="HubSpot">
-            <figure class="gallery-item">
-              <img src="imagenes/hub1.jpg" alt="HubSpot · Hero" />
-              <figcaption>HubSpot · Hero</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/hub2.jpg" alt="HubSpot · Grid" />
-              <figcaption>HubSpot · Grid</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/hub3.jpg" alt="HubSpot · Detail" />
-              <figcaption>HubSpot · Detail</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/hub4.jpg" alt="HubSpot · Mobile" />
-              <figcaption>HubSpot · Mobile</figcaption>
-            </figure>
-            <figure class="gallery-item">
-              <img src="imagenes/hub5.jpg" alt="HubSpot · Mobile" />
-              <figcaption>HubSpot · Mobile</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <!-- Lightbox fullscreen -->
-        <div class="lightbox hidden" id="lightbox" aria-hidden="true">
-          <div class="lightbox-backdrop" data-close></div>
-          <button class="lightbox-btn lb-prev" aria-label="Previous">⟨</button>
-          <img class="lightbox-img" alt="Expanded view" />
-          <button class="lightbox-btn lb-next" aria-label="Next">⟩</button>
-          <button class="lightbox-close" aria-label="Close" title="Close">
+        <!-- end of .tab-panels -->
+        <!-- Lightbox: handled by the existing script.js -->
+        <div aria-hidden="true" class="lightbox hidden" id="lightbox">
+          <div class="lightbox-backdrop" data-close=""></div>
+          <button aria-label="Previous image" class="lightbox-btn lb-prev">
+            ⟨
+          </button>
+          <img alt="Expanded project image" class="lightbox-img" />
+          <button aria-label="Next image" class="lightbox-btn lb-next">
+            ⟩
+          </button>
+          <button aria-label="Close image" class="lightbox-close" title="Close">
             ×
           </button>
         </div>
       </section>
-
       <footer class="footer">
-        <p>PORTfolio - Santiago Cossu © 2025 · All rights reserved.</p>
+        <p>PORTfolio - Santiago Cossu © 2026 · All rights reserved.</p>
       </footer>
     </div>
   </body>
