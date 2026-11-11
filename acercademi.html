@@ -1,4 +1,4 @@
-<!-- 
+<!--
 Copyright © 2025 Santiago Cossu (SantiagoF2-cyber)
 This work is licensed under CC BY-NC-ND 4.0.
 Do not copy, modify or use without permission.
@@ -16,27 +16,416 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
     />
 
     <title>Acerca de mí - PORTAfolio</title>
+
     <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
     <link rel="icon" href="imagenes/LOGO.png" />
     <link rel="stylesheet" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
     <script src="script.js" defer></script>
+
+    <style>
+      /* ======================================
+       ACERCA DE MÍ - DISEÑO PERSONALIZADO
+       Estilos exclusivos de esta página
+    ====================================== */
+
+      #sobre-mi.seccion {
+        width: 100%;
+        max-width: 1240px;
+        padding: 44px 24px 80px;
+        margin: 0 auto;
+        text-align: left;
+        flex: 1;
+      }
+
+      /* Distribución principal */
+
+      #sobre-mi .about-layout {
+        display: grid;
+        grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+        align-items: stretch;
+        gap: 26px;
+        width: 100%;
+      }
+
+      /* Estilos compartidos */
+
+      #sobre-mi .about-photo-card,
+      #sobre-mi .about-content-card {
+        position: relative;
+        border-radius: 22px;
+        background: rgba(23, 43, 35, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      /* ======================================
+       TARJETA DE FOTOGRAFÍA
+    ====================================== */
+
+      #sobre-mi .about-photo-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 38px 22px;
+        overflow: hidden;
+        animation: aboutFadeLeft 0.75s ease both;
+      }
+
+      /* Luz decorativa */
+
+      #sobre-mi .about-photo-card::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: -130px;
+        left: -110px;
+        border-radius: 50%;
+        background: rgba(0, 224, 255, 0.09);
+        filter: blur(45px);
+        pointer-events: none;
+        animation: aboutGlow 7s ease-in-out infinite;
+      }
+
+      /* Fotografía de perfil */
+
+      #sobre-mi .about-photo {
+        width: 235px;
+        height: 235px;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        border: 3px solid #00e0ff;
+        padding: 4px;
+        background: rgba(0, 224, 255, 0.06);
+        box-shadow:
+          0 0 0 7px rgba(0, 224, 255, 0.07),
+          0 12px 35px rgba(0, 0, 0, 0.35);
+        margin: 0 0 25px;
+        position: relative;
+        z-index: 1;
+        animation: aboutFloat 6s ease-in-out infinite;
+      }
+
+      #sobre-mi .about-name {
+        font-size: 1.45rem;
+        font-weight: 750;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+
+      #sobre-mi .about-role {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #8cf1e3;
+        margin: 0 0 22px;
+      }
+
+      #sobre-mi .about-photo-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      #sobre-mi .about-photo-tags span {
+        font-size: 0.79rem;
+        color: #e3fffa;
+        padding: 7px 11px;
+        border-radius: 30px;
+        border: 1px solid rgba(0, 224, 255, 0.22);
+        background: rgba(0, 224, 255, 0.08);
+      }
+
+      /* ======================================
+       TARJETA DE CONTENIDO
+    ====================================== */
+
+      #sobre-mi .about-content-card {
+        padding: clamp(28px, 4vw, 50px);
+        animation: aboutFadeRight 0.85s ease both;
+      }
+
+      #sobre-mi .about-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #8cf1e3;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 1.7px;
+        text-transform: uppercase;
+        margin-bottom: 13px;
+      }
+
+      #sobre-mi .about-eyebrow::before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: #00e0ff;
+        border-radius: 4px;
+      }
+
+      #sobre-mi .about-title {
+        color: #fff;
+        font-size: clamp(2rem, 3.4vw, 2.8rem);
+        line-height: 1.2;
+        font-weight: 800;
+        margin: 0 0 26px;
+        text-align: left;
+      }
+
+      #sobre-mi .about-description p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.08rem;
+        line-height: 1.8;
+        margin: 0 0 19px;
+        text-align: left;
+      }
+
+      #sobre-mi .about-description strong {
+        color: #fff;
+        font-weight: 750;
+      }
+
+      #sobre-mi .about-description p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Separador decorativo */
+
+      #sobre-mi .about-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 224, 255, 0.55),
+          rgba(255, 255, 255, 0.06)
+        );
+        margin: 28px 0;
+      }
+
+      /* ======================================
+       BOTONES
+    ====================================== */
+
+      #sobre-mi .about-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+      }
+
+      #sobre-mi .about-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 47px;
+        padding: 12px 24px;
+        font-size: 0.98rem;
+        font-weight: 700;
+        border-radius: 9px;
+        text-decoration: none;
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      #sobre-mi .about-btn-primary {
+        background: linear-gradient(90deg, #00e0ff, #00dba7);
+        color: #061b1d;
+        border: 1px solid transparent;
+      }
+
+      #sobre-mi .about-btn-secondary {
+        background: rgba(255, 255, 255, 0.04);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+      }
+
+      #sobre-mi .about-btn:hover {
+        transform: translateY(-3px);
+      }
+
+      #sobre-mi .about-btn-primary:hover {
+        background: #00e0ff;
+        box-shadow: 0 8px 28px rgba(0, 224, 255, 0.19);
+      }
+
+      #sobre-mi .about-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.13);
+      }
+
+      #sobre-mi .about-btn:focus-visible {
+        outline: 2px solid #00e0ff;
+        outline-offset: 4px;
+      }
+
+      /* ======================================
+       ANIMACIONES
+    ====================================== */
+
+      @keyframes aboutFadeLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes aboutFadeRight {
+        from {
+          opacity: 0;
+          transform: translateX(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes aboutFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+
+      @keyframes aboutGlow {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.9;
+          transform: scale(1.15);
+        }
+      }
+
+      /* ======================================
+       TABLET Y MOBILE
+    ====================================== */
+
+      @media (max-width: 850px) {
+        #sobre-mi.seccion {
+          padding: 26px 18px 60px;
+        }
+
+        #sobre-mi .about-layout {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        #sobre-mi .about-photo-card {
+          padding: 32px 22px;
+        }
+
+        #sobre-mi .about-photo {
+          width: 190px;
+          height: 190px;
+        }
+
+        #sobre-mi .about-content-card {
+          padding: 30px 25px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #sobre-mi.seccion {
+          padding: 20px 14px 45px;
+        }
+
+        #sobre-mi .about-photo-card {
+          padding: 28px 18px;
+        }
+
+        #sobre-mi .about-photo {
+          width: 175px;
+          height: 175px;
+        }
+
+        #sobre-mi .about-name {
+          font-size: 1.3rem;
+        }
+
+        #sobre-mi .about-content-card {
+          padding: 27px 21px;
+        }
+
+        #sobre-mi .about-title {
+          font-size: 2rem;
+          margin-bottom: 22px;
+        }
+
+        #sobre-mi .about-description p {
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+
+        #sobre-mi .about-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        #sobre-mi .about-btn {
+          width: 100%;
+        }
+      }
+
+      /* Accesibilidad: reducir movimiento */
+
+      @media (prefers-reduced-motion: reduce) {
+        #sobre-mi .about-photo-card,
+        #sobre-mi .about-content-card,
+        #sobre-mi .about-photo,
+        #sobre-mi .about-photo-card::before {
+          animation: none;
+        }
+
+        #sobre-mi .about-btn {
+          transition: none;
+        }
+      }
+    </style>
   </head>
+
   <body class="fondo">
     <div class="overlay-bg"></div>
+
     <div class="container">
       <nav>
         <h2 class="logo">PORT<span class="blue">A</span>folio</h2>
+
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="acercademi.html">Acerca de mí</a></li>
+          <li>
+            <a href="acercademi.html" aria-current="page">Acerca de mí</a>
+          </li>
           <li><a href="proyectos.html">Proyectos</a></li>
           <li><a href="habilidades.html">Habilidades</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
+
         <div class="top-buttons">
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
@@ -68,54 +457,99 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
         </div>
       </nav>
 
-      <section class="seccion">
-        <div class="perfil-card transparente">
-          <h1>Acerca de mí</h1>
+      <!-- ACERCA DE MÍ -->
 
-          <img
-            src="imagenes/foto-perfil.png"
-            alt="Santiago Cossu"
-            class="perfil-img"
-          />
+      <section class="seccion" id="sobre-mi">
+        <div class="about-layout">
+          <!-- TARJETA DE PERFIL -->
 
-          <p>
-            ¡Hola! Soy <strong>Santiago Cossu</strong>, desarrollador web. Me
-            gusta transformar ideas en sitios y soluciones digitales que no solo
-            se vean bien, sino que también sean útiles, rápidas y fáciles de
-            usar.
-          </p>
+          <div class="about-photo-card">
+            <img
+              src="imagenes/foto-perfil.png"
+              alt="Fotografía de Santiago Cossu"
+              class="about-photo"
+              width="235"
+              height="235"
+            />
 
-          <p>
-            Trabajo con <strong>HTML, CSS, JavaScript, React y Node.js</strong>,
-            además de herramientas como <strong>GoHighLevel y HubSpot</strong>.
-            Tengo experiencia desarrollando sitios personalizados, landing
-            pages, configurando CRM, realizando integraciones y mejorando
-            proyectos que ya están en funcionamiento.
-          </p>
+            <h2 class="about-name">Santiago Cossu</h2>
 
-          <p>
-            Me considero una persona detallista, responsable y comprometida con
-            cada proyecto. Me gusta escuchar, entender lo que necesita cada
-            cliente y mantener una comunicación cercana durante todo el proceso.
-          </p>
+            <p class="about-role">Desarrollador Web</p>
 
-          <p>
-            Ya sea para crear algo desde cero, mejorar una web existente o
-            resolver un problema técnico, mi objetivo es siempre el mismo:
-            <strong
-              >encontrar una solución que realmente funcione y que deje al
-              cliente conforme con el resultado.</strong
-            >
-          </p>
+            <div class="about-photo-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>GoHighLevel</span>
+              <span>HubSpot</span>
+            </div>
+          </div>
 
-          <a href="contacto.html" class="btn">Contáctame</a>
+          <!-- TARJETA DE INFORMACIÓN -->
+
+          <div class="about-content-card">
+            <span class="about-eyebrow"> Un poco sobre mí </span>
+
+            <h1 class="about-title">Acerca de mí</h1>
+
+            <div class="about-description">
+              <p>
+                ¡Hola! Soy <strong>Santiago Cossu</strong>, desarrollador web.
+                Me gusta transformar ideas en sitios y soluciones digitales que
+                no solo se vean bien, sino que también sean útiles, rápidas y
+                fáciles de usar.
+              </p>
+
+              <p>
+                Trabajo con
+                <strong>HTML, CSS, JavaScript, React y Node.js</strong>, además
+                de herramientas como <strong>GoHighLevel y HubSpot</strong>.
+                Tengo experiencia desarrollando sitios personalizados, landing
+                pages, configurando CRM, realizando integraciones y mejorando
+                proyectos que ya están en funcionamiento.
+              </p>
+
+              <p>
+                Me considero una persona detallista, responsable y comprometida
+                con cada proyecto. Me gusta escuchar, entender lo que necesita
+                cada cliente y mantener una comunicación cercana durante todo el
+                proceso.
+              </p>
+
+              <p>
+                Ya sea para crear algo desde cero, mejorar una web existente o
+                resolver un problema técnico, mi objetivo es siempre el mismo:
+                <strong>
+                  encontrar una solución que realmente funcione y que deje al
+                  cliente conforme con el resultado.
+                </strong>
+              </p>
+            </div>
+
+            <div class="about-divider"></div>
+
+            <!-- BOTONES -->
+
+            <div class="about-actions">
+              <a href="contacto.html" class="about-btn about-btn-primary">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                Contáctame
+              </a>
+
+              <a href="proyectos.html" class="about-btn about-btn-secondary">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                Ver proyectos
+              </a>
+            </div>
+          </div>
         </div>
       </section>
+
+      <footer class="footer">
+        <p>
+          PORTAfolio - Santiago Cossu &copy; 2026 · Todos los derechos
+          reservados.
+        </p>
+      </footer>
     </div>
-    <footer class="footer">
-      <p>
-        PORTAfolio - Santiago Cossu &copy; 2025 · Todos los derechos reservados.
-      </p>
-    </footer>
   </body>
 </html>
