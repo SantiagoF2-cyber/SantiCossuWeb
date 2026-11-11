@@ -59,6 +59,40 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
+    <!-- Datos estructurados: perfil profesional -->
+    <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://santiagof2-cyber.github.io/SantiCossuWeb/#person",
+              "name": "Santiago Cossu",
+              "url": "https://santiagof2-cyber.github.io/SantiCossuWeb/",
+              "image": "https://santiagof2-cyber.github.io/SantiCossuWeb/imagenes/foto-perfil.png",
+              "jobTitle": "Desarrollador web freelance",
+              "description": "Desarrollador web especializado en sitios personalizados, landing pages, React, Node.js, GoHighLevel y HubSpot.",
+              "sameAs": ["https://github.com/SantiagoF2-cyber"],
+              "knowsAbout": [
+                "Desarrollo web",
+                "React",
+                "JavaScript",
+                "Node.js",
+                "GoHighLevel",
+                "HubSpot",
+                "Diseño web responsivo"
+              ]
+            }
+
+      <!-- Imagen principal -->
+      <meta
+        property="og:image"
+        content="https://santiagof2-cyber.github.io/SantiCossuWeb/imagenes/foto-perfil.png"
+      />
+      <meta
+        property="og:image:alt"
+        content="Retrato profesional de Santiago Cossu, desarrollador web"
+      />
+    </script>
+
     <script src="script.js" defer></script>
 
     <style>
@@ -659,6 +693,41 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
           animation: none;
         }
       }
+
+      /* Fotografía profesional en el inicio */
+
+      .home-page .home-intro {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .home-page .home-profile-photo {
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #00e0ff;
+        box-shadow: 0 0 22px rgba(0, 224, 255, 0.22);
+      }
+
+      .home-page .home-intro .home-eyebrow {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 480px) {
+        .home-page .home-profile-photo {
+          width: 75px;
+          height: 75px;
+        }
+
+        .home-page .home-intro {
+          gap: 12px;
+        }
+      }
     </style>
   </head>
 
@@ -706,10 +775,21 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
 
       <main class="hero-content">
         <div class="text">
-          <span class="home-eyebrow">
-            <i class="fas fa-circle" aria-hidden="true"></i>
-            Desarrollo web · CRM · UX/UI
-          </span>
+          <div class="home-intro">
+            <img
+              src="imagenes/foto-perfil.png"
+              alt="Santiago Cossu, desarrollador web freelance"
+              class="home-profile-photo"
+              width="90"
+              height="90"
+              decoding="async"
+            />
+
+            <span class="home-eyebrow">
+              <i class="fas fa-circle" aria-hidden="true"></i>
+              Desarrollo web · CRM · UX/UI
+            </span>
+          </div>
 
           <h1>
             Hola, soy
