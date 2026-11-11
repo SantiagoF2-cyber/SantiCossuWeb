@@ -1,49 +1,110 @@
-<!-- 
+<!--
 Copyright © 2025 Santiago Cossu (SantiagoF2-cyber)
 This work is licensed under CC BY-NC-ND 4.0.
 Do not copy, modify or use without permission.
 Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
 -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
-      content="Portafolio web de Santiago Cossu: diseño y desarrollo de sitios web modernos y responsivos."
+      content="Explore Santiago Cossu's certifications and technical skills in GoHighLevel, HubSpot, React, Node.js, PHP, JavaScript, UX/UI design, CRM, landing pages and web development."
     />
+
     <title>Skills & Certifications - PORTfolio</title>
+
     <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
     <link rel="icon" href="imagenes/LOGO.png" />
     <link rel="stylesheet" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
     <script src="script.js" defer></script>
+
+    <style>
+      /* Page-specific responsive adjustments */
+
+      #certificaciones .certificaciones-contenedor {
+        align-items: stretch;
+      }
+
+      #certificaciones .cert-card {
+        height: auto;
+        min-height: 200px;
+        min-width: 0;
+        overflow-wrap: break-word;
+      }
+
+      #certificaciones .cert-card h3 {
+        font-size: 1rem;
+        line-height: 1.35;
+        margin-bottom: 8px;
+      }
+
+      #certificaciones .cert-card p {
+        font-size: 0.88rem;
+        line-height: 1.4;
+        margin: 0;
+      }
+
+      @media (max-width: 480px) {
+        #certificaciones .certificaciones-contenedor {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+          padding: 0 12px;
+        }
+
+        #certificaciones .cert-card {
+          padding: 16px 10px;
+          min-height: 205px;
+          max-width: 100%;
+        }
+
+        #certificaciones .cert-card h3 {
+          font-size: 0.88rem;
+        }
+
+        #certificaciones .cert-card p {
+          font-size: 0.78rem;
+        }
+      }
+    </style>
   </head>
+
   <body class="fondo">
     <div class="overlay-bg"></div>
+
     <div class="container">
       <nav>
         <h2 class="logo"><span class="blue">PORT</span>folio</h2>
+
         <ul>
           <li><a href="index-en.html">Home</a></li>
           <li><a href="aboutme-en.html">About Me</a></li>
           <li><a href="projects-en.html">Projects</a></li>
-          <li><a href="skills-en.html">Skills</a></li>
-          <li><a href="contacto.html">Contact</a></li>
+          <li>
+            <a href="skills-en.html" aria-current="page"> Skills </a>
+          </li>
+          <li><a href="contact-en.html">Contact</a></li>
         </ul>
+
         <div class="top-buttons">
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
               src="imagenes/es.png"
-              alt="Español"
+              alt="Spanish"
               style="width: 18px; height: 12px; margin-right: 5px"
             />
-            Español
+            Spanish
           </button>
+
           <button class="idioma-btn" id="en-btn" style="display: none">
             <img
               src="imagenes/en.png"
@@ -52,201 +113,328 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
             />
             English
           </button>
+
           <button class="modo-oscuro-toggle">🌙</button>
         </div>
       </nav>
 
+      <!-- CERTIFICATIONS -->
+
       <section id="certificaciones">
         <h2>Certifications</h2>
+
         <div class="certificaciones-contenedor">
+          <!-- User Interface Design -->
           <div class="cert-card transparente">
             <i
-              class="fas fa-code"
-              title="Front End Libraries · freeCodeCamp"
+              class="fas fa-object-group"
+              title="User Interface Design"
+              aria-hidden="true"
             ></i>
-            <h3>Front End Development Libraries</h3>
-            <p>freeCodeCamp · 2024</p>
+            <h3>User Interface (UI) Design</h3>
+            <p>Secretariat of Innovation, Science and Technology · 2026</p>
           </div>
 
+          <!-- UX/UI Design -->
           <div class="cert-card transparente">
             <i
-              class="fas fa-database"
-              title="Data Structures · freeCodeCamp"
+              class="fas fa-pen-ruler"
+              title="UX/UI Design"
+              aria-hidden="true"
             ></i>
-            <h3>Legacy JS & Data Structures</h3>
-            <p>freeCodeCamp · 2024</p>
+            <h3>UX/UI Design</h3>
+            <p>Coderhouse · 2026</p>
           </div>
 
+          <!-- Landing Pages -->
           <div class="cert-card transparente">
             <i
-              class="fas fa-laptop-code"
-              title="Responsive Design · freeCodeCamp"
+              class="fas fa-bullseye"
+              title="Landing Pages and Conversion"
+              aria-hidden="true"
             ></i>
-            <h3>Responsive Web Design</h3>
-            <p>freeCodeCamp · 2023</p>
+            <h3>Attraction Total: Design Landing Pages That Convert</h3>
+            <p>Coderhouse · 2026</p>
           </div>
 
-          <div class="cert-card transparente">
-            <i class="fab fa-google" title="HTML and CSS Course · Google"></i>
-            <h3>HTML & CSS (1/2)</h3>
-            <p>Google Actívate · 2023</p>
-          </div>
-
+          <!-- Programming Algorithms -->
           <div class="cert-card transparente">
             <i
-              class="fab fa-google"
-              title="HTML and CSS Completed · Google"
+              class="fas fa-code-branch"
+              title="Programming Algorithms"
+              aria-hidden="true"
             ></i>
-            <h3>HTML & CSS (2/2)</h3>
-            <p>Google Actívate · 2023</p>
+            <h3>Programming Algorithms</h3>
+            <p>Argentine Ministry of Education · 2025</p>
           </div>
 
-          <div class="cert-card transparente">
-            <i class="fab fa-js" title="JavaScript Course · EducaciónIT"></i>
-            <h3>JavaScript from Scratch</h3>
-            <p>EducaciónIT · 2022</p>
-          </div>
-
-          <div class="cert-card transparente">
-            <i class="fas fa-rocket" title="Bootcamp 4.0 IngeLearn"></i>
-            <h3>BOOTCAMP 4.0</h3>
-            <p>IngeLearn · 2025</p>
-          </div>
-
+          <!-- Digital Institutional Projects -->
           <div class="cert-card transparente">
             <i
-              class="fas fa-user-graduate"
-              title="System Analysis Degree · ESBA"
+              class="fas fa-school"
+              title="Institutional Projects and Digital Technologies"
+              aria-hidden="true"
             ></i>
-            <h3>Technical Degree in Systems Analysis</h3>
-            <p>ESBA · 2021–2023</p>
+            <h3>Institutional Projects Supported by Digital Technologies</h3>
+            <p>Argentine Ministry of Education · 2025</p>
           </div>
 
-          <!-- NEW CERTIFICATIONS -->
-
-          <div class="cert-card transparente">
-            <i
-              class="fas fa-book-open"
-              title="Open Educational Resources (OER) Development · UNESCO"
-            ></i>
-            <h3>Open Educational Resources (OER) Development</h3>
-            <p>UNESCO · 2025</p>
-          </div>
-
-          <div class="cert-card transparente">
-            <i
-              class="fas fa-brain"
-              title="Introduction to Generative AI · Secretariat of Innovation, Science and Technology"
-            ></i>
-            <h3>Introduction to Generative AI</h3>
-            <p>Secretariat of Innovation, Science and Technology · 2025</p>
-          </div>
-
+          <!-- Internet of Things -->
           <div class="cert-card transparente">
             <i
               class="fas fa-network-wired"
-              title="Internet of Things · Secretariat of Innovation, Science and Technology"
+              title="Internet of Things"
+              aria-hidden="true"
             ></i>
-            <h3>Internet of Things</h3>
+            <h3>Internet of Things (IoT)</h3>
             <p>Secretariat of Innovation, Science and Technology · 2025</p>
           </div>
 
-          <div class="cert-card transparente">
-            <i
-              class="fas fa-chalkboard-teacher"
-              title="ICT Essentials Course for Teachers · UNESCO"
-            ></i>
-            <h3>ICT Essentials Course for Teachers</h3>
-            <p>UNESCO · 2025</p>
-          </div>
-
+          <!-- Figma -->
           <div class="cert-card transparente">
             <i
               class="fab fa-figma"
-              title="Figma: Practical Guide · Secretariat of Innovation, Science and Technology"
+              title="Figma Practical Guide"
+              aria-hidden="true"
             ></i>
             <h3>Figma: Practical Guide</h3>
             <p>Secretariat of Innovation, Science and Technology · 2025</p>
           </div>
 
-          <div class="cert-card transparente">
-            <i
-              class="fas fa-robot"
-              title="Introduction to AI Development Course · BIG school"
-            ></i>
-            <h3>Introduction to AI Development Course</h3>
-            <p>BIG school · 2025</p>
-          </div>
-
+          <!-- Cloud Storage -->
           <div class="cert-card transparente">
             <i
               class="fas fa-cloud"
-              title="Cloud Storage and Usage · Secretariat of Innovation, Science and Technology"
+              title="Cloud Storage"
+              aria-hidden="true"
             ></i>
             <h3>Cloud Storage and Usage</h3>
             <p>Secretariat of Innovation, Science and Technology · 2025</p>
           </div>
 
+          <!-- Generative AI -->
           <div class="cert-card transparente">
             <i
-              class="fas fa-school"
-              title="Institutional Projects Mediated by Digital Technologies · Ministry of Human Capital - Department of Education"
+              class="fas fa-brain"
+              title="Generative Artificial Intelligence"
+              aria-hidden="true"
             ></i>
-            <h3>Institutional Projects Mediated by Digital Technologies</h3>
-            <p>Ministry of Human Capital · Department of Education · 2025</p>
+            <h3>Introduction to Generative AI</h3>
+            <p>Secretariat of Innovation, Science and Technology · 2025</p>
+          </div>
+
+          <!-- UNESCO OER -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-book-open"
+              title="Open Educational Resources"
+              aria-hidden="true"
+            ></i>
+            <h3>Open Educational Resources (OER) Development</h3>
+            <p>UNESCO · 2025</p>
+          </div>
+
+          <!-- UNESCO ICT -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-chalkboard-teacher"
+              title="ICT Essentials"
+              aria-hidden="true"
+            ></i>
+            <h3>ICT Essentials Course for Teachers</h3>
+            <p>UNESCO · 2025</p>
+          </div>
+
+          <!-- AI Development -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-robot"
+              title="AI Development"
+              aria-hidden="true"
+            ></i>
+            <h3>Introduction to AI-Assisted Development</h3>
+            <p>BIG school · 2025</p>
+          </div>
+
+          <!-- Bootcamp -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-rocket"
+              title="Bootcamp 4.0"
+              aria-hidden="true"
+            ></i>
+            <h3>BOOTCAMP 4.0</h3>
+            <p>IngeLearn · 2025</p>
+          </div>
+
+          <!-- Front End Libraries -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-code"
+              title="Front End Development Libraries"
+              aria-hidden="true"
+            ></i>
+            <h3>Front End Development Libraries</h3>
+            <p>freeCodeCamp · 2024</p>
+          </div>
+
+          <!-- JavaScript Algorithms -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-database"
+              title="JavaScript Algorithms and Data Structures"
+              aria-hidden="true"
+            ></i>
+            <h3>Legacy JS &amp; Data Structures</h3>
+            <p>freeCodeCamp · 2024</p>
+          </div>
+
+          <!-- Responsive Web Design -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-laptop-code"
+              title="Responsive Web Design"
+              aria-hidden="true"
+            ></i>
+            <h3>Responsive Web Design</h3>
+            <p>freeCodeCamp · 2023</p>
+          </div>
+
+          <!-- HTML and CSS Part 1 -->
+          <div class="cert-card transparente">
+            <i
+              class="fab fa-google"
+              title="HTML and CSS"
+              aria-hidden="true"
+            ></i>
+            <h3>HTML &amp; CSS (1/2)</h3>
+            <p>Google Actívate · 2023</p>
+          </div>
+
+          <!-- HTML and CSS Part 2 -->
+          <div class="cert-card transparente">
+            <i
+              class="fab fa-google"
+              title="HTML and CSS"
+              aria-hidden="true"
+            ></i>
+            <h3>HTML &amp; CSS (2/2)</h3>
+            <p>Google Actívate · 2023</p>
+          </div>
+
+          <!-- Systems Analysis Degree -->
+          <div class="cert-card transparente">
+            <i
+              class="fas fa-user-graduate"
+              title="Systems Analysis Degree"
+              aria-hidden="true"
+            ></i>
+            <h3>Technical Degree in Systems Analysis</h3>
+            <p>ESBA · 2021–2023</p>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="cert-card transparente">
+            <i
+              class="fab fa-js"
+              title="JavaScript Fundamentals"
+              aria-hidden="true"
+            ></i>
+            <h3>JavaScript from Scratch</h3>
+            <p>EducaciónIT · 2022</p>
           </div>
         </div>
       </section>
 
+      <!-- TECHNICAL SKILLS -->
+
       <section id="habilidades">
         <h2>Technical Skills</h2>
+
         <div class="habilidades-grid">
+          <!-- GoHighLevel -->
           <div class="habilidad transparente">
-            <i class="fab fa-html5"></i>
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+            <span>GoHighLevel</span>
+          </div>
+
+          <!-- HTML5 -->
+          <div class="habilidad transparente">
+            <i class="fab fa-html5" aria-hidden="true"></i>
             <span>HTML5</span>
           </div>
+
+          <!-- CSS3 -->
           <div class="habilidad transparente">
-            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-css3-alt" aria-hidden="true"></i>
             <span>CSS3</span>
           </div>
+
+          <!-- JavaScript -->
           <div class="habilidad transparente">
-            <i class="fab fa-js-square"></i>
+            <i class="fab fa-js-square" aria-hidden="true"></i>
             <span>JavaScript</span>
           </div>
+
+          <!-- React -->
           <div class="habilidad transparente">
-            <i class="fab fa-react"></i>
+            <i class="fab fa-react" aria-hidden="true"></i>
             <span>React.js</span>
           </div>
+
+          <!-- Node.js -->
           <div class="habilidad transparente">
-            <i class="fab fa-wordpress"></i>
-            <span>WordPress</span>
+            <i class="fab fa-node-js" aria-hidden="true"></i>
+            <span>Node.js</span>
           </div>
+
+          <!-- PHP -->
           <div class="habilidad transparente">
-            <i class="fas fa-database"></i>
+            <i class="fab fa-php" aria-hidden="true"></i>
+            <span>PHP</span>
+          </div>
+
+          <!-- MySQL -->
+          <div class="habilidad transparente">
+            <i class="fas fa-database" aria-hidden="true"></i>
             <span>MySQL</span>
           </div>
+
+          <!-- MongoDB -->
           <div class="habilidad transparente">
-            <i class="fas fa-leaf"></i>
+            <i class="fas fa-leaf" aria-hidden="true"></i>
             <span>MongoDB</span>
           </div>
+
+          <!-- Supabase -->
           <div class="habilidad transparente">
-            <i class="fas fa-cloud"></i>
+            <i class="fas fa-cloud" aria-hidden="true"></i>
             <span>Supabase</span>
           </div>
+
+          <!-- HubSpot -->
           <div class="habilidad transparente">
-            <i class="fab fa-hubspot"></i>
+            <i class="fab fa-hubspot" aria-hidden="true"></i>
             <span>HubSpot</span>
           </div>
+
+          <!-- Git and GitHub -->
           <div class="habilidad transparente">
-            <i class="fas fa-paint-brush"></i>
-            <span>UI Design</span>
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span>Git / GitHub</span>
+          </div>
+
+          <!-- UX/UI Design -->
+          <div class="habilidad transparente">
+            <i class="fas fa-pencil-ruler" aria-hidden="true"></i>
+            <span>UX/UI Design</span>
           </div>
         </div>
       </section>
     </div>
 
     <footer class="footer">
-      <p>PORTfolio - Santiago Cossu &copy; 2025 · All rights reserved.</p>
+      <p>PORTfolio - Santiago Cossu &copy; 2026 · All rights reserved.</p>
     </footer>
   </body>
 </html>
