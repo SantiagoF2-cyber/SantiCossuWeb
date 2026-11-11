@@ -5,26 +5,26 @@ Do not copy, modify or use without permission.
 Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
 -->
 <!doctype html>
-
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      content="Explore Santiago Cossu's web development projects, including React, Node.js, GoHighLevel, HubSpot CRM, PHP e-commerce, landing pages, and integrations."
       name="description"
+      content="Portafolio de Santiago Cossu con proyectos de desarrollo web, React, Node.js, GoHighLevel, HubSpot, e-commerce en PHP, landing pages, CRM e integraciones."
     />
-    <title>Projects - PORTfolio</title>
-    <link href="imagenes/1-favicon.png" rel="icon" type="image/png" />
-    <link href="imagenes/LOGO.png" rel="icon" />
-    <link href="style.css" rel="stylesheet" />
+    <title>Proyectos - PORTAfolio</title>
+    <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
+    <link rel="icon" href="imagenes/LOGO.png" />
+    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <script defer="" src="script.js"></script>
+    <script src="script.js" defer></script>
+
     <style>
-      /* Project-specific styles: no changes to style.css required */
+      /* Estilos exclusivos de la sección Proyectos: no requieren editar style.css */
       #portfolio .tab-current-title {
         display: none;
       }
@@ -155,363 +155,377 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
     <div class="overlay-bg"></div>
     <div class="container">
       <nav>
-        <h2 class="logo"><span class="blue">PORT</span>folio</h2>
+        <h2 class="logo"><span class="blue">PORTA</span>folio</h2>
         <ul>
-          <li><a href="index-en.html">Home</a></li>
-          <li><a href="aboutme-en.html">About Me</a></li>
-          <li><a aria-current="page" href="projects-en.html">Projects</a></li>
-          <li><a href="skills-en.html">Skills</a></li>
-          <li><a href="contact-en.html">Contact</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acercademi.html">Acerca de mí</a></li>
+          <li><a href="proyectos.html" aria-current="page">Proyectos</a></li>
+          <li><a href="habilidades.html">Habilidades</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
         <div class="top-buttons">
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
+              src="imagenes/es.png"
               alt=""
               aria-hidden="true"
-              height="12"
-              src="imagenes/es.png"
-              style="margin-right: 5px"
               width="18"
+              height="12"
+              style="margin-right: 5px"
             />
             Español
           </button>
           <button class="idioma-btn" id="en-btn" style="display: none">
             <img
+              src="imagenes/en.png"
               alt=""
               aria-hidden="true"
-              height="12"
-              src="imagenes/en.png"
-              style="margin-right: 5px"
               width="18"
+              height="12"
+              style="margin-right: 5px"
             />
             English
           </button>
-          <button aria-label="Toggle display mode" class="modo-oscuro-toggle">
+          <button
+            class="modo-oscuro-toggle"
+            aria-label="Cambiar modo de visualización"
+          >
             🌙
           </button>
         </div>
       </nav>
+
       <section class="seccion" id="portfolio">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">Mis proyectos</h2>
         <p class="section-subtitle">
-          A selection of my work in web development, interfaces, e-commerce, and
-          CRM systems. Choose a project to explore my contributions and view its
-          images.
+          Una selección de trabajos de desarrollo web, interfaces, tiendas
+          online y CRM. Elegí un proyecto para conocer qué hice y ver sus
+          imágenes.
         </p>
-        <!-- Project navigation -->
-        <div aria-label="Projects" class="tabs" role="tablist">
+
+        <!-- Navegación entre proyectos -->
+        <div class="tabs" role="tablist" aria-label="Proyectos">
           <button
-            aria-controls="tab-ghl"
-            aria-selected="true"
             class="tab active"
-            id="tabbtn-ghl"
-            role="tab"
-            tabindex="0"
             type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tab-ghl"
+            id="tabbtn-ghl"
+            tabindex="0"
           >
             GoHighLevel
           </button>
           <button
-            aria-controls="tab-ecommerce"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-ecommerce"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-ecommerce"
+            id="tabbtn-ecommerce"
+            tabindex="-1"
           >
-            PHP E-commerce
+            E-commerce PHP
           </button>
           <button
-            aria-controls="tab-hubspot-crm"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-hubspot-crm"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-hubspot-crm"
+            id="tabbtn-hubspot-crm"
+            tabindex="-1"
           >
             HubSpot CRM
           </button>
           <button
-            aria-controls="tab-portafolio"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-portafolio"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-portafolio"
+            id="tabbtn-portafolio"
+            tabindex="-1"
           >
-            Personal Portfolio
+            Portafolio propio
           </button>
           <button
-            aria-controls="tab-nexora"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-nexora"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-nexora"
+            id="tabbtn-nexora"
+            tabindex="-1"
           >
             Nexora
           </button>
           <button
-            aria-controls="tab-nova"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-nova"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-nova"
+            id="tabbtn-nova"
+            tabindex="-1"
           >
             Nova
           </button>
           <button
-            aria-controls="tab-knd"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-knd"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-knd"
+            id="tabbtn-knd"
+            tabindex="-1"
           >
             KNS
           </button>
           <button
-            aria-controls="tab-maquiladoras"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-maquiladoras"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-maquiladoras"
+            id="tabbtn-maquiladoras"
+            tabindex="-1"
           >
             Maquiladoras
           </button>
           <button
-            aria-controls="tab-estudio"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-estudio"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-estudio"
+            id="tabbtn-estudio"
+            tabindex="-1"
           >
-            Accounting Firm
+            Estudio contable
           </button>
           <button
-            aria-controls="tab-CafeNova"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-cafenova"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-CafeNova"
+            id="tabbtn-cafenova"
+            tabindex="-1"
           >
             Cafe Nova
           </button>
           <button
-            aria-controls="tab-HubSpot"
-            aria-selected="false"
             class="tab"
-            id="tabbtn-hubspot-galeria"
-            role="tab"
-            tabindex="-1"
             type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-HubSpot"
+            id="tabbtn-hubspot-galeria"
+            tabindex="-1"
           >
-            HubSpot · Gallery
+            HubSpot · Galería
           </button>
         </div>
-        <p class="mobile-tabs-hint">Swipe the tabs to see more projects →</p>
-        <!-- All panels must remain inside .tab-panels -->
+        <p class="mobile-tabs-hint">
+          Deslizá las pestañas para ver más proyectos →
+        </p>
+
+        <!-- Todos los paneles deben permanecer dentro de .tab-panels -->
         <div class="tab-panels">
           <!-- GoHighLevel -->
           <div
-            aria-labelledby="tabbtn-ghl"
             class="tab-panel active"
-            id="tab-ghl"
             role="tabpanel"
+            id="tab-ghl"
+            aria-labelledby="tabbtn-ghl"
           >
             <div class="project-description">
-              <span class="project-eyebrow">Sales funnel · CRM · UX/UI</span>
+              <span class="project-eyebrow">Embudo · CRM · UX/UI</span>
               <h3>
-                Technical Funnel and CRM Implementation in GoHighLevel /
+                Implementación técnica de embudo y CRM en GoHighLevel /
                 Captivation Hub
               </h3>
               <p>
-                I built the technical foundation of a system in
-                <strong>Captivation Hub (GoHighLevel)</strong>, including the
-                main funnel pages, appointment calendar, thank-you page, and 404
-                page. The work also covered UX/UI refinements, Spanish
-                localization, and configuration of the overall user flow.
+                Desarrollo técnico de un sistema base en
+                <strong>Captivation Hub (GoHighLevel)</strong>, incluyendo las
+                páginas principales del embudo, calendario, página de gracias y
+                página 404. El trabajo también contempló ajustes de UX/UI,
+                personalización en español y configuración del flujo general.
               </p>
               <p>
-                I handled technical fixes, functional testing, and improvements
-                to make the experience clearer and prepare the system for future
-                expansion.
+                Realicé correcciones técnicas, pruebas funcionales y mejoras
+                orientadas a ofrecer una experiencia más clara y dejar la
+                estructura preparada para futuras ampliaciones.
               </p>
               <div
-                aria-label="Project technologies and areas"
                 class="project-tags"
+                aria-label="Tecnologías y áreas del proyecto"
               >
                 <span>GoHighLevel</span>
                 <span>Captivation Hub</span>
                 <span>Funnels</span>
-                <span>Appointment calendars</span>
+                <span>Calendarios</span>
               </div>
               <p class="project-note">
-                Illustrative image: AI-generated mockup based on a visual
-                structure similar to the implemented project, used to protect
-                client privacy.
+                Imagen ilustrativa: mockup generado con IA para preservar la
+                privacidad del cliente, basado en una estructura visual similar
+                a la implementada.
               </p>
             </div>
             <div class="gallery-grid single-project" data-gallery="ghl">
               <figure class="gallery-item">
                 <img
-                  alt="Illustrative mockup of the Captivation Hub funnel and CRM"
-                  loading="lazy"
                   src="imagenes/implementación técnica embudo y CRM en GoHighLevel - Captivationhub.png"
+                  alt="Mockup del embudo y CRM en Captivation Hub"
+                  loading="lazy"
                 />
-                <figcaption>Captivation Hub · Funnel and CRM</figcaption>
+                <figcaption>Captivation Hub · Embudo y CRM</figcaption>
               </figure>
             </div>
           </div>
-          <!-- PHP e-commerce -->
+
+          <!-- E-commerce PHP -->
           <div
-            aria-labelledby="tabbtn-ecommerce"
             class="tab-panel"
-            id="tab-ecommerce"
             role="tabpanel"
+            id="tab-ecommerce"
+            aria-labelledby="tabbtn-ecommerce"
           >
             <div class="project-description">
               <span class="project-eyebrow"
-                >Online store · Checkout · Shipping</span
+                >Tienda online · Checkout · Envíos</span
               >
               <h3>
-                PHP/Bootstrap E-commerce Optimization — Checkout, Payments, and
-                Postal Code Shipping Quotes
+                Optimización de e-commerce PHP/Bootstrap con pagos y cotizador
+                por código postal
               </h3>
               <p>
-                I optimized an online store built with
-                <strong>PHP and Bootstrap</strong>, improving the cart,
-                checkout, user registration, guest purchases, Mercado Pago and
-                bank transfer payments, minimum-order-weight validations, free
-                shipping by weight, and responsive layout.
+                Optimización técnica de una tienda online desarrollada con
+                <strong>PHP y Bootstrap</strong>. Mejoré el carrito y el
+                checkout, el registro de usuarios, la compra como invitado, los
+                pagos con Mercado Pago y transferencia bancaria, las
+                validaciones de peso mínimo, los envíos gratuitos por peso y la
+                experiencia responsive.
               </p>
               <p>
-                I implemented a
-                <strong>postal code-based shipping calculator</strong> using a
-                rate table. It takes order weight, delivery method, and
-                destination category into account, with options for home
-                delivery, branch pickup, and manual delivery arrangements with
-                the seller.
+                Implementé un
+                <strong>cotizador de envíos por código postal</strong> basado en
+                una tabla tarifaria, teniendo en cuenta el peso del pedido, el
+                tipo de entrega y la categoría de destino. Incluí opciones de
+                entrega a domicilio, retiro en sucursal y coordinación manual
+                con el vendedor.
               </p>
               <p>
-                I also tested the complete purchase flow, including shipping
-                calculations, passing shipping costs to payment, validating
-                Mercado Pago amounts, and confirmation emails for the customer
-                and store administrator.
+                También realicé pruebas del recorrido de compra, el cálculo y
+                traslado del costo de envío al pago, la validación de importes
+                en Mercado Pago y los correos de confirmación para cliente y
+                administrador.
               </p>
               <div
-                aria-label="Project technologies and areas"
                 class="project-tags"
+                aria-label="Tecnologías y áreas del proyecto"
               >
                 <span>PHP</span>
                 <span>Bootstrap</span>
                 <span>Mercado Pago</span>
                 <span>Checkout</span>
-                <span>Postal code shipping</span>
+                <span>Cotizador por CP</span>
               </div>
               <p class="project-note">
-                Illustrative image: AI-generated mockup used to protect the
-                client’s information. The technical improvements and
-                implementations described are my own work.
+                Imagen ilustrativa: mockup generado con IA para proteger los
+                datos del cliente. Los ajustes y las implementaciones técnicas
+                descritas corresponden a mi trabajo.
               </p>
             </div>
             <div class="gallery-grid single-project" data-gallery="ecommerce">
               <figure class="gallery-item">
                 <img
-                  alt="Illustrative PHP and Bootstrap e-commerce mockup with checkout and shipping calculator"
-                  loading="lazy"
                   src="imagenes/Optimización de e-commerce PHP Bootstrap con checkout, pagos, envíos y cotizador por CP Proyect.png"
+                  alt="Mockup de e-commerce PHP y Bootstrap con checkout y cotizador de envíos"
+                  loading="lazy"
                 />
                 <figcaption>
-                  PHP/Bootstrap E-commerce · Checkout and Shipping
+                  E-commerce PHP/Bootstrap · Checkout y envíos
                 </figcaption>
               </figure>
             </div>
           </div>
+
           <!-- HubSpot CRM -->
           <div
-            aria-labelledby="tabbtn-hubspot-crm"
             class="tab-panel"
-            id="tab-hubspot-crm"
             role="tabpanel"
+            id="tab-hubspot-crm"
+            aria-labelledby="tabbtn-hubspot-crm"
           >
             <div class="project-description">
-              <span class="project-eyebrow">CRM · Sales pipeline · Leads</span>
+              <span class="project-eyebrow">CRM · Pipeline · Leads</span>
               <h3>
-                HubSpot CRM Setup and Organization for Sales Lead Management
+                Implementación y organización de CRM en HubSpot para gestión
+                comercial de leads
               </h3>
               <p>
-                I configured and organized <strong>HubSpot CRM</strong> to
-                improve the tracking of leads and sales opportunities. This
-                included updating Contact and Deal properties, setting up the
-                B2C pipeline, and improving views, filters, and records.
+                Configuración y organización de
+                <strong>HubSpot CRM</strong> para mejorar el seguimiento de
+                leads y oportunidades comerciales. Realicé ajustes en
+                propiedades de Contactos y Negocios, configuración del pipeline
+                B2C y mejoras en vistas, filtros y registros.
               </p>
               <p>
-                I also verified lead intake from
-                <strong>Meta Ads, Wix, and web forms</strong>, field mapping,
-                and lead traceability, followed by functional testing and
-                implementation support.
+                Además, validé la entrada de contactos desde
+                <strong>Meta Ads, Wix y formularios web</strong>, el mapeo de
+                campos y la trazabilidad de leads. Completé el trabajo con
+                pruebas funcionales y soporte durante la implementación.
               </p>
               <div
-                aria-label="Project technologies and areas"
                 class="project-tags"
+                aria-label="Tecnologías y áreas del proyecto"
               >
                 <span>HubSpot</span>
                 <span>CRM</span>
                 <span>Pipeline B2C</span>
-                <span>Lead management</span>
+                <span>Gestión de leads</span>
               </div>
               <p class="project-note">
-                Illustrative image: AI-generated mockup based on a structure
-                similar to the implemented project, without exposing client
-                information.
+                Imagen ilustrativa: mockup generado con IA y basado en una
+                estructura similar a la implementada, sin exponer información
+                del cliente.
               </p>
             </div>
             <div class="gallery-grid single-project" data-gallery="hubspot-crm">
               <figure class="gallery-item">
                 <img
-                  alt="Illustrative HubSpot CRM mockup for sales lead management"
-                  loading="lazy"
                   src="imagenes/Implementación y organización de CRM en HubSpot para gestión comercial de leads.png"
+                  alt="Mockup del CRM HubSpot para gestión comercial de leads"
+                  loading="lazy"
                 />
-                <figcaption>HubSpot CRM · Lead Management</figcaption>
+                <figcaption>HubSpot CRM · Gestión de leads</figcaption>
               </figure>
             </div>
           </div>
-          <!-- Personal portfolio -->
+
+          <!-- Portafolio propio -->
           <div
-            aria-labelledby="tabbtn-portafolio"
             class="tab-panel"
-            id="tab-portafolio"
             role="tabpanel"
+            id="tab-portafolio"
+            aria-labelledby="tabbtn-portafolio"
           >
             <div class="project-description">
               <span class="project-eyebrow"
-                >Personal website · Responsive design</span
+                >Sitio personal · Diseño responsive</span
               >
-              <h3>My Web Development Portfolio</h3>
+              <h3>Mi portafolio web</h3>
               <p>
-                I built this personal website to showcase my projects, skills,
-                and experience, focusing on content organization, intuitive
-                navigation, visual design, and a responsive experience across
-                devices.
+                Sitio personal desarrollado para presentar mis proyectos,
+                habilidades y experiencia. Cuidé la organización del contenido,
+                la navegación, la estética y la adaptación a distintas
+                pantallas.
               </p>
               <div
-                aria-label="Project technologies and areas"
                 class="project-tags"
+                aria-label="Tecnologías y áreas del proyecto"
               >
                 <span>HTML</span>
                 <span>CSS</span>
@@ -521,423 +535,441 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
             <div class="gallery-grid" data-gallery="portafolio">
               <figure class="gallery-item">
                 <img
-                  alt="Personal Portfolio · Home"
-                  loading="lazy"
                   src="imagenes/1.jpg"
+                  alt="Portafolio propio · Inicio"
+                  loading="lazy"
                 />
-                <figcaption>Personal Portfolio · Home</figcaption>
+                <figcaption>Portafolio propio · Inicio</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Personal Portfolio · Featured Projects"
-                  loading="lazy"
                   src="imagenes/3.jpg"
+                  alt="Portafolio propio · Proyectos destacados"
+                  loading="lazy"
                 />
-                <figcaption>Personal Portfolio · Featured Projects</figcaption>
+                <figcaption>
+                  Portafolio propio · Proyectos destacados
+                </figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Personal Portfolio · Certifications"
-                  loading="lazy"
                   src="imagenes/4.jpg"
+                  alt="Portafolio propio · Certificaciones"
+                  loading="lazy"
                 />
-                <figcaption>Personal Portfolio · Certifications</figcaption>
+                <figcaption>Portafolio propio · Certificaciones</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Personal Portfolio · Contact"
-                  loading="lazy"
                   src="imagenes/5.jpg"
+                  alt="Portafolio propio · Contacto"
+                  loading="lazy"
                 />
-                <figcaption>Personal Portfolio · Contact</figcaption>
+                <figcaption>Portafolio propio · Contacto</figcaption>
               </figure>
             </div>
           </div>
+
           <!-- Nexora -->
           <div
-            aria-labelledby="tabbtn-nexora"
             class="tab-panel"
-            id="tab-nexora"
             role="tabpanel"
+            id="tab-nexora"
+            aria-labelledby="tabbtn-nexora"
           >
             <div class="project-description">
-              <span class="project-eyebrow"
-                >Landing page · Dashboard · Mobile</span
-              >
+              <span class="project-eyebrow">Landing · Dashboard · Mobile</span>
               <h3>Nexora</h3>
               <p>
-                A visual presentation of a digital project featuring a landing
-                page, dashboard-style interface, and mobile view. The focus is
-                on a clear interface and consistent visual design.
+                Presentación visual de un proyecto digital que reúne una
+                landing, un panel tipo dashboard y una vista adaptada a
+                dispositivos móviles. El foco está en la claridad de la interfaz
+                y la consistencia visual.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="nexora">
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nexora1.jpg"
                   alt="Nexora · Landing"
                   loading="lazy"
-                  src="imagenes/nexora1.jpg"
                 />
                 <figcaption>Nexora · Landing</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nexora2.jpg"
                   alt="Nexora · Dashboard"
                   loading="lazy"
-                  src="imagenes/nexora2.jpg"
                 />
                 <figcaption>Nexora · Dashboard</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nexora3.jpg"
                   alt="Nexora · Mobile"
                   loading="lazy"
-                  src="imagenes/nexora3.jpg"
                 />
                 <figcaption>Nexora · Mobile</figcaption>
               </figure>
             </div>
           </div>
+
           <!-- Nova -->
           <div
-            aria-labelledby="tabbtn-nova"
             class="tab-panel"
-            id="tab-nova"
             role="tabpanel"
+            id="tab-nova"
+            aria-labelledby="tabbtn-nova"
           >
             <div class="project-description">
               <span class="project-eyebrow"
-                >Interface · Components · Responsive</span
+                >Interfaz · Componentes · Responsive</span
               >
               <h3>Nova</h3>
               <p>
-                A website design concept featuring a prominent hero section,
-                content grid, detail view, and responsive layouts for mobile
-                devices.
+                Propuesta visual de sitio web con una portada destacada, una
+                grilla de contenidos, una vista de detalle y su adaptación para
+                dispositivos móviles.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="nova">
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nova1.jpg"
                   alt="Nova · Hero"
                   loading="lazy"
-                  src="imagenes/nova1.jpg"
                 />
                 <figcaption>Nova · Hero</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nova2.jpg"
                   alt="Nova · Grid"
                   loading="lazy"
-                  src="imagenes/nova2.jpg"
                 />
                 <figcaption>Nova · Grid</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nova3.jpg"
                   alt="Nova · Detail"
                   loading="lazy"
-                  src="imagenes/nova3.jpg"
                 />
                 <figcaption>Nova · Detail</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/nova4.jpg"
                   alt="Nova · Mobile"
                   loading="lazy"
-                  src="imagenes/nova4.jpg"
                 />
                 <figcaption>Nova · Mobile</figcaption>
               </figure>
             </div>
           </div>
+
           <!-- KNS -->
           <div
-            aria-labelledby="tabbtn-knd"
             class="tab-panel"
-            id="tab-knd"
             role="tabpanel"
+            id="tab-knd"
+            aria-labelledby="tabbtn-knd"
           >
             <div class="project-description">
               <span class="project-eyebrow"
-                >Catalog · Navigation · Product details</span
+                >Catálogo · Navegación · Detalles</span
               >
               <h3>KNS</h3>
               <p>
-                A website gallery focused on presenting a catalog through a home
-                page, product listings, and detail pages, with straightforward
-                navigation.
+                Galería de un sitio orientado a presentar un catálogo con
+                páginas de inicio, listado de productos y vistas de detalle,
+                priorizando una navegación sencilla.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="knd">
               <figure class="gallery-item">
-                <img alt="KNS · Home" loading="lazy" src="imagenes/knd1.jpg" />
-                <figcaption>KNS · Home</figcaption>
+                <img
+                  src="imagenes/knd1.jpg"
+                  alt="KNS · Inicio"
+                  loading="lazy"
+                />
+                <figcaption>KNS · Inicio</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="KNS · Catalog"
-                  loading="lazy"
                   src="imagenes/knd2.jpg"
+                  alt="KNS · Catálogo"
+                  loading="lazy"
                 />
-                <figcaption>KNS · Catalog</figcaption>
+                <figcaption>KNS · Catálogo</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="KNS · Detail"
-                  loading="lazy"
                   src="imagenes/knd3.jpg"
+                  alt="KNS · Detalle"
+                  loading="lazy"
                 />
-                <figcaption>KNS · Detail</figcaption>
+                <figcaption>KNS · Detalle</figcaption>
               </figure>
             </div>
           </div>
+
           <!-- Maquiladoras -->
           <div
-            aria-labelledby="tabbtn-maquiladoras"
             class="tab-panel"
-            id="tab-maquiladoras"
             role="tabpanel"
+            id="tab-maquiladoras"
+            aria-labelledby="tabbtn-maquiladoras"
           >
             <div class="project-description">
-              <span class="project-eyebrow">Services website · Responsive</span>
+              <span class="project-eyebrow"
+                >Sitio de servicios · Responsive</span
+              >
               <h3>Maquiladoras</h3>
               <p>
-                A website concept designed to communicate services clearly
-                through informative sections, an organized business
-                presentation, and mobile-friendly layouts.
+                Propuesta web orientada a comunicar servicios de forma clara,
+                con apartados informativos, una presentación comercial ordenada
+                y una vista adaptada a móvil.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="maquiladoras">
               <figure class="gallery-item">
                 <img
+                  src="imagenes/14.jpg"
                   alt="Maquiladoras · Landing"
                   loading="lazy"
-                  src="imagenes/14.jpg"
                 />
                 <figcaption>Maquiladoras · Landing</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Maquiladoras · Services Section"
-                  loading="lazy"
                   src="imagenes/15.jpg"
-                />
-                <figcaption>Maquiladoras · Services Section</figcaption>
-              </figure>
-              <figure class="gallery-item">
-                <img
-                  alt="Maquiladoras · Detail"
+                  alt="Maquiladoras · Sección Servicios"
                   loading="lazy"
-                  src="imagenes/16.jpg"
                 />
-                <figcaption>Maquiladoras · Detail</figcaption>
+                <figcaption>Maquiladoras · Sección Servicios</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/16.jpg"
+                  alt="Maquiladoras · Detalle"
+                  loading="lazy"
+                />
+                <figcaption>Maquiladoras · Detalle</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <img
+                  src="imagenes/17.jpg"
                   alt="Maquiladoras · Mobile"
                   loading="lazy"
-                  src="imagenes/17.jpg"
                 />
                 <figcaption>Maquiladoras · Mobile</figcaption>
               </figure>
             </div>
           </div>
-          <!-- Accounting firm -->
+
+          <!-- Estudio contable -->
           <div
-            aria-labelledby="tabbtn-estudio"
             class="tab-panel"
-            id="tab-estudio"
             role="tabpanel"
+            id="tab-estudio"
+            aria-labelledby="tabbtn-estudio"
           >
             <div class="project-description">
-              <span class="project-eyebrow">Business website · Services</span>
-              <h3>Accounting Firm</h3>
+              <span class="project-eyebrow"
+                >Sitio institucional · Servicios</span
+              >
+              <h3>Estudio contable</h3>
               <p>
-                A professional website concept featuring services, business
-                information, and contact content. Its design aims to convey
-                trust and make information easy to find.
+                Presentación de un sitio institucional con secciones de
+                servicios, información profesional y contenido de contacto. El
+                diseño busca transmitir confianza y facilitar la consulta de
+                información.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="estudio">
               <figure class="gallery-item">
                 <img
-                  alt="Accounting Firm · Hero"
-                  loading="lazy"
                   src="imagenes/9.jpg"
+                  alt="Estudio contable · Hero"
+                  loading="lazy"
                 />
-                <figcaption>Accounting Firm · Hero</figcaption>
+                <figcaption>Estudio contable · Hero</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Accounting Firm · Architecture"
-                  loading="lazy"
                   src="imagenes/10.jpg"
+                  alt="Estudio contable · Arquitectura"
+                  loading="lazy"
                 />
-                <figcaption>Accounting Firm · Architecture</figcaption>
+                <figcaption>Estudio contable · Arquitectura</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Accounting Firm · Legal"
-                  loading="lazy"
                   src="imagenes/12.jpg"
+                  alt="Estudio contable · Legal"
+                  loading="lazy"
                 />
-                <figcaption>Accounting Firm · Legal</figcaption>
+                <figcaption>Estudio contable · Legal</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Accounting Firm · Accounting"
-                  loading="lazy"
                   src="imagenes/1111.jpg"
+                  alt="Estudio contable · Contabilidad"
+                  loading="lazy"
                 />
-                <figcaption>Accounting Firm · Accounting</figcaption>
+                <figcaption>Estudio contable · Contabilidad</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
-                  alt="Accounting Firm · About Us"
-                  loading="lazy"
                   src="imagenes/13.jpg"
+                  alt="Estudio contable · Sobre nosotros"
+                  loading="lazy"
                 />
-                <figcaption>Accounting Firm · About Us</figcaption>
+                <figcaption>Estudio contable · Sobre nosotros</figcaption>
               </figure>
             </div>
           </div>
+
           <!-- Cafe Nova -->
           <div
-            aria-labelledby="tabbtn-cafenova"
             class="tab-panel"
-            id="tab-CafeNova"
             role="tabpanel"
+            id="tab-CafeNova"
+            aria-labelledby="tabbtn-cafenova"
           >
             <div class="project-description">
-              <span class="project-eyebrow">Visual design · Mockups</span>
+              <span class="project-eyebrow">Diseño visual · Mockups</span>
               <h3>Cafe Nova</h3>
               <p>
-                A visual website concept focused on product presentation and
-                ease of navigation, featuring several views and design mockups.
+                Propuesta visual de sitio web con foco en la presentación de
+                productos y la experiencia de navegación. Incluye distintas
+                vistas y mockups del diseño.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="cafenova">
               <figure class="gallery-item">
                 <img
+                  src="imagenes/mockups1.jpg"
                   alt="CafeNova · Hero"
                   loading="lazy"
-                  src="imagenes/mockups1.jpg"
                 />
                 <figcaption>CafeNova · Hero</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/mockups2.jpg"
                   alt="CafeNova · Grid"
                   loading="lazy"
-                  src="imagenes/mockups2.jpg"
                 />
                 <figcaption>CafeNova · Grid</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/mockups3.jpg"
                   alt="CafeNova · Detail"
                   loading="lazy"
-                  src="imagenes/mockups3.jpg"
                 />
                 <figcaption>CafeNova · Detail</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/mockups4.jpg"
                   alt="CafeNova · Mobile"
                   loading="lazy"
-                  src="imagenes/mockups4.jpg"
                 />
                 <figcaption>CafeNova · Mobile</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/mockups5.jpg"
                   alt="CafeNova · Mobile"
                   loading="lazy"
-                  src="imagenes/mockups5.jpg"
                 />
                 <figcaption>CafeNova · Mobile</figcaption>
               </figure>
             </div>
           </div>
-          <!-- HubSpot · Gallery -->
+
+          <!-- HubSpot · Galería -->
           <div
-            aria-labelledby="tabbtn-hubspot-galeria"
             class="tab-panel"
-            id="tab-HubSpot"
             role="tabpanel"
+            id="tab-HubSpot"
+            aria-labelledby="tabbtn-hubspot-galeria"
           >
             <div class="project-description">
-              <span class="project-eyebrow">Platform · Screenshots</span>
-              <h3>HubSpot · Work Gallery</h3>
+              <span class="project-eyebrow">Plataforma · Capturas</span>
+              <h3>HubSpot · Galería de trabajos</h3>
               <p>
-                A selection of screenshots from work in HubSpot. This gallery is
-                separate from the sales lead management project to showcase both
-                areas of experience.
+                Selección de capturas relacionadas con trabajos en el entorno de
+                HubSpot. Esta galería se mantiene separada del proyecto de
+                organización comercial de leads para mostrar ambas experiencias.
               </p>
             </div>
             <div class="gallery-grid" data-gallery="hubspot-galeria">
               <figure class="gallery-item">
                 <img
+                  src="imagenes/hub1.jpg"
                   alt="HubSpot · Hero"
                   loading="lazy"
-                  src="imagenes/hub1.jpg"
                 />
                 <figcaption>HubSpot · Hero</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/hub2.jpg"
                   alt="HubSpot · Grid"
                   loading="lazy"
-                  src="imagenes/hub2.jpg"
                 />
                 <figcaption>HubSpot · Grid</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/hub3.jpg"
                   alt="HubSpot · Detail"
                   loading="lazy"
-                  src="imagenes/hub3.jpg"
                 />
                 <figcaption>HubSpot · Detail</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/hub4.jpg"
                   alt="HubSpot · Mobile"
                   loading="lazy"
-                  src="imagenes/hub4.jpg"
                 />
                 <figcaption>HubSpot · Mobile</figcaption>
               </figure>
               <figure class="gallery-item">
                 <img
+                  src="imagenes/hub5.jpg"
                   alt="HubSpot · Mobile"
                   loading="lazy"
-                  src="imagenes/hub5.jpg"
                 />
                 <figcaption>HubSpot · Mobile</figcaption>
               </figure>
             </div>
           </div>
         </div>
-        <!-- end of .tab-panels -->
-        <!-- Lightbox: handled by the existing script.js -->
-        <div aria-hidden="true" class="lightbox hidden" id="lightbox">
-          <div class="lightbox-backdrop" data-close=""></div>
-          <button aria-label="Previous image" class="lightbox-btn lb-prev">
-            ⟨
-          </button>
-          <img alt="Expanded project image" class="lightbox-img" />
-          <button aria-label="Next image" class="lightbox-btn lb-next">
-            ⟩
-          </button>
-          <button aria-label="Close image" class="lightbox-close" title="Close">
+        <!-- fin de .tab-panels -->
+
+        <!-- Lightbox: el script.js existente lo administra -->
+        <div class="lightbox hidden" id="lightbox" aria-hidden="true">
+          <div class="lightbox-backdrop" data-close></div>
+          <button class="lightbox-btn lb-prev" aria-label="Anterior">⟨</button>
+          <img class="lightbox-img" alt="Vista ampliada" />
+          <button class="lightbox-btn lb-next" aria-label="Siguiente">⟩</button>
+          <button class="lightbox-close" aria-label="Cerrar" title="Cerrar">
             ×
           </button>
         </div>
       </section>
+
       <footer class="footer">
-        <p>PORTfolio - Santiago Cossu © 2026 · All rights reserved.</p>
+        <p>
+          PORTAfolio - Santiago Cossu © 2026 · Todos los derechos reservados.
+        </p>
       </footer>
     </div>
   </body>
