@@ -127,7 +127,9 @@ nav .follow:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
   overflow: hidden;
 }
 
@@ -236,7 +238,9 @@ form button {
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   text-align: center;
 }
 
@@ -280,7 +284,9 @@ body.modo-oscuro .transparente {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   color: #fff;
 }
 
@@ -289,7 +295,9 @@ body.modo-oscuro .transparente {
   margin-bottom: 8px;
   display: block;
   color: #00e0ff;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
   line-height: 1;
 }
 
@@ -341,7 +349,9 @@ body.modo-oscuro .transparente {
   height: 200px;
   max-width: 260px;
   width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   /* ➕ Anti-halo en bordes con blur */
   overflow: hidden;
@@ -352,7 +362,9 @@ body.modo-oscuro .transparente {
   font-size: 2rem;
   margin-bottom: 10px;
   color: #00e0ff;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .cert-card:hover {
@@ -389,7 +401,9 @@ body.modo-oscuro .transparente {
   margin-bottom: 8px;
   display: block;
   color: #00e0ff;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .habilidad span {
@@ -577,7 +591,9 @@ body.modo-oscuro form button {
   color: #dddddd;
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 body.modo-oscuro form button:hover {
@@ -1106,7 +1122,10 @@ body.modo-oscuro .section-subtitle {
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.12s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 .tab:hover {
   transform: translateY(-1px);
@@ -1148,7 +1167,10 @@ body.modo-oscuro .section-subtitle {
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   cursor: zoom-in;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.2s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.2s ease;
 }
 .gallery-item img:hover {
   transform: translateY(-2px) scale(1.01);
@@ -1207,7 +1229,10 @@ body.modo-oscuro .section-subtitle {
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-  transition: background 0.2s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .lightbox-btn:hover,
@@ -1284,7 +1309,9 @@ body.modo-oscuro .section-subtitle {
   font-size: 1.05rem;
   line-height: 1.5;
   opacity: 1;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 /* animación suave al cambiar */
@@ -1472,5 +1499,160 @@ body.modo-oscuro .section-subtitle {
   100% {
     transform: translate(0, 0);
     opacity: 0;
+  }
+}
+
+/* ==========================================
+   INICIO - TESTIMONIOS DE WORKANA
+========================================== */
+
+.home-page .home-testimonios {
+  width: 100%;
+  padding: 85px 5%;
+  text-align: center;
+  color: #fff;
+  background: rgba(8, 24, 22, 0.65);
+}
+
+.home-page .home-testimonios > h2 {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.home-page .home-testimonios > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+}
+
+.home-page .testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 35px;
+}
+
+.home-page .testimonio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.home-page .testimonio-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 224, 255, 0.45);
+}
+
+.home-page .testimonio-estrellas {
+  color: #ffd166;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.home-page .testimonio-card p {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 25px;
+}
+
+.home-page .testimonio-card h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.home-page .testimonio-card span {
+  color: #8cf1e3;
+  font-size: 0.85rem;
+}
+
+.home-page .testimonios-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00e0ff, #00dba7);
+  color: #082323;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.home-page .testimonios-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 224, 255, 0.2);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .home-page .testimonios-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  .home-page .home-testimonios {
+    padding: 65px 20px;
+  }
+
+  .home-page .testimonios-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-page .testimonio-card {
+    padding: 25px 22px;
+  }
+
+  .home-page .testimonios-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .testimonio-card,
+  .home-page .testimonios-btn {
+    transition: none;
+  }
+}
+.home-page .home-testimonios {
+  flex-shrink: 0;
+  background: rgba(8, 24, 22, 0.65);
+}
+
+.home-page .testimonios-btn {
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .home-page .testimonios-btn {
+    max-width: 100%;
   }
 }
