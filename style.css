@@ -1656,3 +1656,62 @@ body.modo-oscuro .section-subtitle {
     max-width: 100%;
   }
 }
+
+/* FOOTER GENERAL DEL PORTAFOLIO */
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 28px 20px;
+  background: #081c1c;
+  border-top: 1px solid rgba(140, 241, 227, 0.15);
+}
+
+.site-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-footer-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.site-footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.site-footer-links a {
+  color: #8cf1e3;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer-links a:hover {
+  color: #00e0ff;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .site-footer-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .site-footer-links {
+    justify-content: center;
+  }
+}
