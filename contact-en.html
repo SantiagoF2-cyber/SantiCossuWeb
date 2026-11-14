@@ -1,42 +1,100 @@
-<!-- 
+<!--
 Copyright © 2025 Santiago Cossu (SantiagoF2-cyber)
 This work is licensed under CC BY-NC-ND 4.0.
-Do not copy, modify or use without permission.
 Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
 -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
-      content="Portafolio web de Santiago Cossu: diseño y desarrollo de sitios web modernos y responsivos."
+      content="Contact Santiago Cossu for web development, landing pages, CRM solutions, and custom digital projects."
     />
-    <title>Contact - PORTAfolio</title>
+
+    <title>Contact | Santiago Cossu</title>
+
     <link rel="icon" href="imagenes/1-favicon.png" type="image/png" />
     <link rel="icon" href="imagenes/LOGO.png" />
     <link rel="stylesheet" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
     <script src="script.js" defer></script>
+
+    <style>
+      .contacto-aviso {
+        margin: 20px auto;
+        max-width: 650px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .contacto-aviso a {
+        color: #00e0ff;
+        text-decoration: underline;
+      }
+
+      .contacto-email {
+        margin: 24px auto;
+        text-align: center;
+      }
+
+      .contacto-email a {
+        color: #8cf1e3;
+        text-decoration: none;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+      }
+
+      .contacto-email a:hover {
+        color: #00e0ff;
+        text-decoration: underline;
+      }
+
+      .footer-legal {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 22px;
+      }
+
+      .footer-legal a {
+        color: #8cf1e3;
+        font-size: 0.85rem;
+        text-decoration: none;
+      }
+
+      .footer-legal a:hover {
+        color: #00e0ff;
+        text-decoration: underline;
+      }
+    </style>
   </head>
+
   <body class="fondo">
     <div class="overlay-bg"></div>
+
     <div class="container">
       <nav>
         <h2 class="logo"><span class="blue">PORT</span>folio</h2>
+
         <ul>
           <li><a href="index-en.html">Home</a></li>
           <li><a href="aboutme-en.html">About Me</a></li>
           <li><a href="projects-en.html">Projects</a></li>
           <li><a href="skills-en.html">Skills</a></li>
-          <li><a href="contact-en.html">Contact</a></li>
+          <li><a href="contact-en.html" aria-current="page">Contact</a></li>
         </ul>
+
         <div class="top-buttons">
-          <!-- Language buttons -->
           <button class="idioma-btn" id="es-btn" style="display: none">
             <img
               src="imagenes/es.png"
@@ -45,6 +103,7 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
             />
             Español
           </button>
+
           <button class="idioma-btn" id="en-btn" style="display: none">
             <img
               src="imagenes/en.png"
@@ -53,53 +112,118 @@ Full license: https://creativecommons.org/licenses/by-nc-nd/4.0/
             />
             English
           </button>
-          <button class="modo-oscuro-toggle">🌙</button>
+
+          <button class="modo-oscuro-toggle" type="button">🌙</button>
         </div>
       </nav>
 
       <section class="seccion">
         <h1>Contact</h1>
+
         <p>
-          Would you like to work together? Fill out the form or reach out to me
-          via social media.
+          Have a project in mind? Tell me what you need, and let's discuss how I
+          can help.
         </p>
 
         <form id="formulario" action="#" method="POST">
           <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" name="name" placeholder="Your name" required />
-          </div>
-
-          <div class="input-group">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-user" aria-hidden="true"></i>
             <input
-              type="email"
-              name="email"
-              placeholder="Your email"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              aria-label="Your name"
+              autocomplete="name"
               required
             />
           </div>
 
           <div class="input-group">
-            <i class="fas fa-comment"></i>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              aria-label="Your email address"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-comment" aria-hidden="true"></i>
             <textarea
               name="message"
-              placeholder="Write your message"
+              placeholder="Tell me about your project..."
+              aria-label="Your message"
               required
             ></textarea>
           </div>
 
-          <button type="submit" class="btn" disabled>Send (Disabled)</button>
-
-          <p style="margin-top: 20px">
-            If you have a project in mind, share the details in the message and
-            I will reply through this form.
+          <p class="contacto-aviso">
+            By sending your inquiry, you agree that I may use the information
+            you provide solely to respond to you. Please read my
+            <a href="privacy-policy-en.html">Privacy Policy</a>.
           </p>
+
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Prepare email
+          </button>
         </form>
+
+        <div class="contacto-email">
+          <p>You can also email me directly:</p>
+
+          <a href="mailto:santiagocossu870@gmail.com">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            santiagocossu870@gmail.com
+          </a>
+        </div>
       </section>
     </div>
+
     <footer class="footer">
-      <p>PORTfolio - Santiago Cossu © 2025 · All rights reserved.</p>
+      <p>PORTfolio - Santiago Cossu &copy; 2026 · All rights reserved.</p>
+
+      <div class="footer-legal">
+        <a href="privacy-policy-en.html">Privacy Policy</a>
+        <a href="terms-en.html">Terms and Conditions</a>
+      </div>
     </footer>
+
+    <script>
+      document
+        .getElementById("formulario")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = this.elements["name"].value.trim();
+          const email = this.elements["email"].value.trim();
+          const message = this.elements["message"].value.trim();
+
+          if (!name || !email || !message) return;
+
+          const subject = encodeURIComponent("Portfolio inquiry - " + name);
+
+          const body = encodeURIComponent(
+            "Name: " +
+              name +
+              "\n" +
+              "Email: " +
+              email +
+              "\n\n" +
+              "Message:\n" +
+              message,
+          );
+
+          window.location.href =
+            "mailto:santiagocossu870@gmail.com" +
+            "?subject=" +
+            subject +
+            "&body=" +
+            body;
+        });
+    </script>
   </body>
 </html>
